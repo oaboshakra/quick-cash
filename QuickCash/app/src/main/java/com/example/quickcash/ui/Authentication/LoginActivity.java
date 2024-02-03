@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.MainActivity;
 import com.example.quickcash.databinding.ActivityLoginBinding;
 import com.example.quickcash.R;
+import com.example.quickcash.util.DataValidator;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -21,21 +22,5 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
-        Button LoginButton = findViewById(R.id.Sign_In_Request);
-
-        LoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-                Toast.makeText(LoginActivity.this, "Login succesfull", Toast.LENGTH_SHORT).show();
-                Intent RIntent = new Intent(getBaseContext() , MainActivity.class);
-                startActivity(RIntent);
-
-            }
-        });
     }
 }
