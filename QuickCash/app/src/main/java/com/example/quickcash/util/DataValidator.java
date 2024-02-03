@@ -4,19 +4,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DataValidator {
-    public DataValidator(){}
-    public static boolean notNull(String s){ // not implemented yet
-        return true;
-    }
-    public static boolean isValidEmail (String email){ // not implemented yet
-        return true;
-    }
-    public  static boolean isValidPassword(String password){ // not implemented yet
-        return true;
-    }
-    public static boolean matchesConfirmPassword(String password , String confirmPAssword){ // not implemented yet
-        return true;
+
+    public DataValidator() {}
+
+    public static boolean notNull(String s) {
+        return s != null && !s.isEmpty() ;
     }
 
+    public static boolean isValidEmail(String email) {
+        if (email == null) {
+            return false;
+        }
 
+        // Use a simple regex pattern for email validation
+        Pattern pattern = Pattern.compile(AppConstants.EMAIL_REGEX);
+        Matcher matcher = pattern.matcher(email);
+
+        return matcher.matches();
+    }
+
+    public static boolean isValidPassword(String password) {
+        return password != null && password.length() >= AppConstants.PASSWORD_LENGTH;
+    }
+
+    public static boolean matchesConfirmPassword(String password, String confirmPassword) {
+        return password != null && password.equals(confirmPassword);
+    }
 }
