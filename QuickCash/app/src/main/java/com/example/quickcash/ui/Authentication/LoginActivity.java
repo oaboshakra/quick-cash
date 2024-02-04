@@ -1,5 +1,5 @@
 package com.example.quickcash.ui.Authentication;
-import android.text.TextUtils;
+//import static com.example.quickcash.adapter.Authentication.*;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,17 +8,29 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+//import com.example.quickcash.adapter.Authentication;
 import com.example.quickcash.MainActivity;
 import com.example.quickcash.databinding.ActivityLoginBinding;
 import com.example.quickcash.R;
+import com.example.quickcash.models.User;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
 
+    //private Authentication authInstance;
+
+    private FirebaseAuth auth;
 
 
     private String errorMessage = "";
@@ -44,24 +56,37 @@ public class LoginActivity extends AppCompatActivity {
 
                 boolean readyToLogin = true;
                 if (email.equals(AppConstants.EMPTY_STRING) || password.equals(AppConstants.EMPTY_STRING)) {
-                    setErrorMessage(AppConstants.FIELD_EMPTY_ERROR);
+                    setErrorMessage(AppConstants.FIELD_EMPTY_MESSAGE);
                     readyToLogin = false;
                 }
                 if (readyToLogin && !DataValidator.isValidEmail(email)) {
-                    setErrorMessage(AppConstants.INVALID_EMAIL_ERROR);
+                    setErrorMessage(AppConstants.INVALID_EMAIL_MESSAGE);
                     readyToLogin = false;
                 }
                 if (readyToLogin && !DataValidator.isValidPassword(password)) {
-                    setErrorMessage(AppConstants.INVALID_PASSWORD_ERROR);
+                    setErrorMessage(AppConstants.INVALID_PASSWORD_MESSAGE);
                     readyToLogin = false;
                 }
-                Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
-                statusLabel.setText(errorMessage);
+                if(readyToLogin) {
+                    auth = FirebaseAuth.getInstance();
+                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, AppConstants.LOGIN_SUCCESS_MESSAGE, Toast.LENGTH_SHORT).show();
+                                // move to home page code should be implemented here when the home page is created by the team mates.
+                            } else {
+                                Toast.makeText(LoginActivity.this, AppConstants.LOGIN_FAILURE_MESSAGE, Toast.LENGTH_SHORT).show();
+                            }
 
+                        }
+                    });
+                }
 
             }
         });
     }
+
     public String getErrorMessage() {
         return errorMessage;
     }

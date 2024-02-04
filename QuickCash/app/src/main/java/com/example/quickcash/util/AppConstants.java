@@ -1,13 +1,7 @@
 package com.example.quickcash.util;
-
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-
 import com.example.quickcash.ui.Authentication.LoginActivity;
 
 public class AppConstants {
-
     public static final String EMPTY_STRING = "";
 
     public static final Class<LoginActivity> LAUNCHER_CLASS= LoginActivity.class;
@@ -24,11 +18,13 @@ public class AppConstants {
 
 
 
+    // Errors message and success message
+    public static final String LOGIN_SUCCESS_MESSAGE  = "Login success";
+    public static final String LOGIN_FAILURE_MESSAGE  = "Login Failed / Invalid credinatials";
 
-    // Errors
-    public static final String INVALID_EMAIL_ERROR = "EMAIL_INAVLID" ;
-    public static final String INVALID_PASSWORD_ERROR = "PASSWORD_INVALID";
-    public static final String FIELD_EMPTY_ERROR = "Required fields cannot be empty";
+    public static final String INVALID_EMAIL_MESSAGE = "EMAIL_INAVLID";
+    public static final String INVALID_PASSWORD_MESSAGE = "PASSWORD_INVALID";
+    public static final String FIELD_EMPTY_MESSAGE = "Required fields cannot be empty";
 
 
 }

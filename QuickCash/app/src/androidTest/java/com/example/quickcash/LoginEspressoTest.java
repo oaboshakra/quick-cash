@@ -49,7 +49,6 @@ public class LoginEspressoTest {
         onView(withId(R.id.Sign_In_Request)).perform(click());
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.INVALID_PASSWORD_ERROR)));
     }
-
     @Test
     public void testEmptyPassword(){
         onView(withId(R.id.Sign_In_Email)).perform(typeText(AppConstants.VALID_EMAIL));
@@ -57,8 +56,6 @@ public class LoginEspressoTest {
         onView(withId(R.id.Sign_In_Request)).perform(click());
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.FIELD_EMPTY_ERROR)));
     }
-
-
     @Test
     public void testEmptyEmail(){
         onView(withId(R.id.Sign_In_Email)).perform(typeText(AppConstants.EMPTY_STRING));
@@ -82,12 +79,6 @@ public class LoginEspressoTest {
         onView(withId(R.id.Sign_In_Request)).perform(click());
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.EMPTY_STRING)));
     }
-
-
-
-
-
-
 }
 
 
