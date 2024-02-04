@@ -51,9 +51,4 @@ public class DataValidatorUnitTest {
         assertFalse(DataValidator.matchesConfirmPassword("passwoed" , "aieufbsdbfbdf"));
     }
 
-
-
-
-
-
 }

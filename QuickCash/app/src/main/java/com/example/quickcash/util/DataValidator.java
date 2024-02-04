@@ -8,7 +8,10 @@ public class DataValidator {
     public DataValidator() {}
 
     public static boolean notNull(String s) {
-        return s != null && !s.isEmpty() ;
+        return s != null ;
+    }
+    public static  boolean isEmpty(String s){
+        return s.equals("");
     }
 
     public static boolean isValidEmail(String email) {
@@ -24,7 +27,7 @@ public class DataValidator {
     }
 
     public static boolean isValidPassword(String password) {
-        return password != null && password.length() >= AppConstants.PASSWORD_LENGTH;
+        return  password.length() >= AppConstants.PASSWORD_LENGTH;
     }
 
     public static boolean matchesConfirmPassword(String password, String confirmPassword) {

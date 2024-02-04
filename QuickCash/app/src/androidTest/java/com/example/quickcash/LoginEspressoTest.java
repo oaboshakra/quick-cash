@@ -1,4 +1,5 @@
 package com.example.quickcash;
+import androidx.test.espresso.IdlingResource;
 
 import androidx.test.core.app.ActivityScenario;
 import static androidx.test.espresso.Espresso.onView;
@@ -43,7 +44,7 @@ public class LoginEspressoTest {
     }
     @Test
     public void testInvalidPassword(){
-        onView(withId(R.id.Sign_In_Email)).perform(typeText(AppConstants.VALID_PASSWORD));
+        onView(withId(R.id.Sign_In_Email)).perform(typeText(AppConstants.VALID_EMAIL));
         onView(withId(R.id.Sign_In_Password)).perform(typeText(AppConstants.INVALID_PASSWORD));
         onView(withId(R.id.Sign_In_Request)).perform(click());
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.INVALID_PASSWORD_ERROR)));
@@ -51,7 +52,7 @@ public class LoginEspressoTest {
 
     @Test
     public void testEmptyPassword(){
-        onView(withId(R.id.Sign_In_Email)).perform(typeText(AppConstants.VALID_PASSWORD));
+        onView(withId(R.id.Sign_In_Email)).perform(typeText(AppConstants.VALID_EMAIL));
         onView(withId(R.id.Sign_In_Password)).perform(typeText(AppConstants.EMPTY_STRING));
         onView(withId(R.id.Sign_In_Request)).perform(click());
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.FIELD_EMPTY_ERROR)));
@@ -80,7 +81,6 @@ public class LoginEspressoTest {
         onView(withId(R.id.Sign_In_Password)).perform(typeText(AppConstants.VALID_PASSWORD));
         onView(withId(R.id.Sign_In_Request)).perform(click());
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.EMPTY_STRING)));
-
     }
 
 
