@@ -21,6 +21,7 @@ import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -38,10 +39,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView statusLabel = findViewById(R.id.statusLabel);
-        statusLabel.setText(AppConstants.EMPTY_STRING);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         Button signInRequest = findViewById(R.id.Sign_In_Request);
         signInRequest.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText emailTextBox = findViewById(R.id.Sign_In_Email);
                 EditText passwordTextBox = findViewById(R.id.Sign_In_Password);
-
+                TextView statusLabel = findViewById(R.id.statusLabel);
                 setErrorMessage(AppConstants.EMPTY_STRING);
 
                 String email = emailTextBox.getText().toString();
@@ -59,17 +59,26 @@ public class LoginActivity extends AppCompatActivity {
                 boolean readyToLogin = true;
                 if (email.equals(AppConstants.EMPTY_STRING) || password.equals(AppConstants.EMPTY_STRING)) {
                     setErrorMessage(AppConstants.FIELD_EMPTY_MESSAGE);
-                    readyToLogin = false;
+                    statusLabel.setText(errorMessage);
+                    Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 if (readyToLogin && !DataValidator.isValidEmail(email)) {
                     setErrorMessage(AppConstants.INVALID_EMAIL_MESSAGE);
-                    readyToLogin = false;
+                    statusLabel.setText(errorMessage);
+                    Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 if (readyToLogin && !DataValidator.isValidPassword(password)) {
                     setErrorMessage(AppConstants.INVALID_PASSWORD_MESSAGE);
-                    readyToLogin = false;
+                    statusLabel.setText(errorMessage);
+                    Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 statusLabel.setText(AppConstants.EMPTY_STRING);
+
+
+                FirebaseApp.initializeApp(LoginActivity.this);
                 auth = FirebaseAuth.getInstance();
                 if(readyToLogin) {
 
@@ -86,8 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
                 }
-                setErrorMessage(errorMessage);
-                statusLabel.setText(errorMessage);
+
                 Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
 
 
