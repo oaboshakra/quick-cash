@@ -38,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TextView statusLabel = findViewById(R.id.statusLabel);
+        statusLabel.setText(AppConstants.EMPTY_STRING);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -48,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText emailTextBox = findViewById(R.id.Sign_In_Email);
                 EditText passwordTextBox = findViewById(R.id.Sign_In_Password);
-                TextView statusLabel = findViewById(R.id.statusLabel);
+
                 setErrorMessage(AppConstants.EMPTY_STRING);
 
                 String email = emailTextBox.getText().toString();
@@ -67,8 +69,10 @@ public class LoginActivity extends AppCompatActivity {
                     setErrorMessage(AppConstants.INVALID_PASSWORD_MESSAGE);
                     readyToLogin = false;
                 }
+                statusLabel.setText(AppConstants.EMPTY_STRING);
+                auth = FirebaseAuth.getInstance();
                 if(readyToLogin) {
-                    auth = FirebaseAuth.getInstance();
+
                     auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -82,6 +86,10 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
                 }
+                setErrorMessage(errorMessage);
+                statusLabel.setText(errorMessage);
+                Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
+
 
             }
         });

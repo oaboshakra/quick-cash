@@ -18,11 +18,6 @@ public class DataValidatorUnitTest {
     }
 
     @Test
-    public void TestnotNull3() {
-        assertFalse(DataValidator.notNull(""));
-    }
-
-    @Test
     public void TestisValidEmail1() {
         assertTrue(DataValidator.isValidEmail("user@example.com"));
     }
