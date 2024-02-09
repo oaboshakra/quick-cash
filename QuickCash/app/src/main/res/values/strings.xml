@@ -3,4 +3,14 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+        <string name="search_hint">Enter a job title</string>
+        <string name="search">Search</string>
+        <string name="filter_options">Filter Options</string>
+        <string name="apply">Apply</string>
+        <string name="application_sent">Application Sent</string>
+        <string name="apply_filter">Apply Filter</string>
+        <!-- Add other strings as needed -->
+
+
 </resources>
