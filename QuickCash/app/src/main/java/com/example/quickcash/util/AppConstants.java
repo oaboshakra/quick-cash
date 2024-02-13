@@ -1,6 +1,6 @@
 package com.example.quickcash.util;
 import com.example.quickcash.ui.Authentication.LoginActivity;
-
+import com.example.quickcash.ui.Authentication.ApplyJobActivity;
 public class AppConstants {
     public static final String EMPTY_STRING = "";
 

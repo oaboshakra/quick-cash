@@ -27,6 +27,7 @@ public class DataValidatorUnitTest {
         assertFalse(DataValidator.isValidEmail("invalidEmail@"));
     }
 
+
     @Test
     public void TestisValidPassword1() {
         assertTrue(DataValidator.isValidPassword("StrongPassword123"));
@@ -46,4 +47,14 @@ public class DataValidatorUnitTest {
         assertFalse(DataValidator.matchesConfirmPassword("passwoed" , "aieufbsdbfbdf"));
     }
 
+    @Test
+    public void TestisValidName1() { assertTrue(DataValidator.isValidName("Good name")); }
+
+    @Test
+    public void TestisValidName2() { assertFalse(DataValidator.isValidName("BAD@NAME23")); }
+    @Test
+    public void TestisValidPhone1() { assertTrue(DataValidator.isValidPhone("123-4567-5555")); }
+
+    @Test
+    public void TestisValidPhone2() { assertFalse(DataValidator.isValidPhone("BadPhone123")); }
 }
