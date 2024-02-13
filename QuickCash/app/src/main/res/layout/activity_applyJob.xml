@@ -83,7 +83,7 @@
         android:id="@+id/jobView"
         android:layout_width="163dp"
         android:layout_height="124dp"
-        android:text="Job Introduction"
+        android:text="jobintrodction"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="200dp"
         tools:layout_editor_absoluteY="7dp" />
