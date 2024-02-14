@@ -5,7 +5,7 @@
     <string name="title_notifications">Notifications</string>
 
         <string name="search_hint">Enter a job title</string>
-        <string name="search">Search</string>
+        <string name="search_button_label">Search</string>
         <string name="filter_options">Filter Options</string>
         <string name="apply">Apply</string>
         <string name="application_sent">Application Sent</string>
