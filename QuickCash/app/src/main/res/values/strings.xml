@@ -3,4 +3,19 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="email">Email</string>
+    <string name="create_a_password">Create a Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="first_name">First Name</string>
+    <string name="todo">TODO</string>
+    <string name="last_name">Last Name</string>
+    <string name="log_in">Log In</string>
+    <string name="create_account">Create Account</string>
+    <string name="existing_user">Existing user?</string>
+    <string name="registration">Registration</string>
+    <string name="existing_user_log_in">Existing User? Log In</string>
+    <string-array name="role_array">
+        <item>Employee</item>
+        <item>Employer</item>
+    </string-array>
 </resources>
