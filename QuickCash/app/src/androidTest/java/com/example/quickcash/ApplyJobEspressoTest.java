@@ -23,9 +23,9 @@ import org.junit.runner.RunWith;
 
 
 import com.example.quickcash.ui.Authentication.ApplyJobActivity;
-import com.example.quickcash.ui.Authentication.LoginActivity;
 import com.example.quickcash.util.AppConstants;
 import com.google.firebase.FirebaseApp;
+
 
 public class ApplyJobEspressoTest {
 
@@ -34,7 +34,9 @@ public class ApplyJobEspressoTest {
     @Before
     public void setUp(){
         activityScenario = ActivityScenario.launch(ApplyJobActivity.class);
-        activityScenario.onActivity(activity -> {});
+        activityScenario.onActivity(activity -> {
+
+        });
     }
 
     @Test

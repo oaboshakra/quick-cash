@@ -1,5 +1,6 @@
 package com.example.quickcash.ui.Authentication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 //import com.example.quickcash.adapter.Authentication;
+import com.example.quickcash.MainActivity;
+import com.example.quickcash.databinding.ActivityApplyjobBinding;
 import com.example.quickcash.R;
-import com.example.quickcash.databinding.ActivityLoginBinding;
+import com.example.quickcash.models.User;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,14 +26,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ApplyJobActivity extends AppCompatActivity {
 
-    private ActivityLoginBinding binding;
+    private ActivityApplyjobBinding binding;
     private FirebaseAuth auth;
     private String errorMessage = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        binding = ActivityApplyjobBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         Button applyBtn = findViewById(R.id.apply_btn);
@@ -81,7 +84,7 @@ public class ApplyJobActivity extends AppCompatActivity {
                 FirebaseApp.initializeApp(ApplyJobActivity.this);
                 auth = FirebaseAuth.getInstance();
                 if(ready) {
-
+                    Toast.makeText(ApplyJobActivity.this, "Submit" ,Toast.LENGTH_SHORT).show();
                 }
 
                 Toast.makeText(ApplyJobActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();

@@ -53,7 +53,7 @@ public class DataValidatorUnitTest {
     @Test
     public void TestisValidName2() { assertFalse(DataValidator.isValidName("BAD@NAME23")); }
     @Test
-    public void TestisValidPhone1() { assertTrue(DataValidator.isValidPhone("123-4567-5555")); }
+    public void TestisValidPhone1() { assertTrue(DataValidator.isValidPhone("123 456 5555")); }
 
     @Test
     public void TestisValidPhone2() { assertFalse(DataValidator.isValidPhone("BadPhone123")); }
