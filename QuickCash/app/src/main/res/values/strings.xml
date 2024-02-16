@@ -10,7 +10,8 @@
         <string name="apply">Apply</string>
         <string name="application_sent">Application Sent</string>
         <string name="apply_filter">Apply Filter</string>
-        <!-- Add other strings as needed -->
+    <string name="job_recommendations">Job Recommendations</string>
+    <!-- Add other strings as needed -->
 
 
 </resources>
