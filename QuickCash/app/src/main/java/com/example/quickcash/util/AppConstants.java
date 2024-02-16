@@ -1,5 +1,6 @@
 package com.example.quickcash.util;
 import com.example.quickcash.ui.Authentication.LoginActivity;
+import com.example.quickcash.ui.profile.EmployerProfile;
 
 public class AppConstants {
     public static final String EMPTY_STRING = "";
@@ -25,6 +26,13 @@ public class AppConstants {
     public static final String INVALID_EMAIL_MESSAGE = "EMAIL_INAVLID";
     public static final String INVALID_PASSWORD_MESSAGE = "PASSWORD_INVALID";
     public static final String FIELD_EMPTY_MESSAGE = "Required fields cannot be empty";
+
+    // Constants for the Profile Page
+    public static final String [] VALID_INDUSTRIES = new String[]{"X", "Y", "Z"};
+    public static final String INVALID_ID = "Invalid ID";
+    public static final String VALID_ID = "123456";
+    public static final String HIRING_STATUS = "HIRING";
+    public static final String PHONE_NO = "9021231234";
 
 
 }
