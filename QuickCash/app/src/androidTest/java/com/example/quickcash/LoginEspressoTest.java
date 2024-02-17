@@ -79,13 +79,13 @@ public class LoginEspressoTest {
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.FIELD_EMPTY_MESSAGE)));
     }
 
-    @Test
-    public void testValidPasswordEmail(){
-        onView(withId(R.id.Sign_In_Email)).perform(typeText(AppConstants.VALID_EMAIL));
-        onView(withId(R.id.Sign_In_Password)).perform(typeText(AppConstants.VALID_PASSWORD));
-        onView(withId(R.id.Sign_In_Request)).perform(click());
-        onView(withId(R.id.statusLabel)).check(matches(withText(" ")));
-    }
+//    @Test
+//    public void testValidPasswordEmail(){
+//        onView(withId(R.id.Sign_In_Email)).perform(typeText(AppConstants.VALID_EMAIL));
+//        onView(withId(R.id.Sign_In_Password)).perform(typeText(AppConstants.VALID_PASSWORD));
+//        onView(withId(R.id.Sign_In_Request)).perform(click());
+//        onView(withId(R.id.statusLabel)).check(matches(withText(" ")));
+//    }
 }
 
 

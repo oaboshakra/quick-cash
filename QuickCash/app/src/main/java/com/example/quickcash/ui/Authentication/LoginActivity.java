@@ -17,6 +17,8 @@ import com.example.quickcash.MainActivity;
 import com.example.quickcash.databinding.ActivityLoginBinding;
 import com.example.quickcash.R;
 import com.example.quickcash.models.User;
+import com.example.quickcash.ui.dashboard.DashboardFragment;
+import com.example.quickcash.ui.home.HomeFragment;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -56,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+
                 EditText emailTextBox = findViewById(R.id.Sign_In_Email);
                 EditText passwordTextBox = findViewById(R.id.Sign_In_Password);
                 TextView statusLabel = findViewById(R.id.statusLabel);
@@ -64,20 +67,20 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailTextBox.getText().toString();
                 String password = passwordTextBox.getText().toString();
 
-                boolean readyToLogin = true;
+
                 if (email.equals(AppConstants.EMPTY_STRING) || password.equals(AppConstants.EMPTY_STRING)) {
                     setErrorMessage(AppConstants.FIELD_EMPTY_MESSAGE);
                     statusLabel.setText(errorMessage);
                     Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (readyToLogin && !DataValidator.isValidEmail(email)) {
+                if ( !DataValidator.isValidEmail(email) ) {
                     setErrorMessage(AppConstants.INVALID_EMAIL_MESSAGE);
                     statusLabel.setText(errorMessage);
                     Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (readyToLogin && !DataValidator.isValidPassword(password)) {
+                if ( !DataValidator.isValidPassword(password) ) {
                     setErrorMessage(AppConstants.INVALID_PASSWORD_MESSAGE);
                     statusLabel.setText(errorMessage);
                     Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
@@ -88,9 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 FirebaseApp.initializeApp(LoginActivity.this);
                 auth = FirebaseAuth.getInstance();
-                if(readyToLogin) {
-
-                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
@@ -102,10 +103,6 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
                     });
-                }
-
-
-
             }
         });
     }
