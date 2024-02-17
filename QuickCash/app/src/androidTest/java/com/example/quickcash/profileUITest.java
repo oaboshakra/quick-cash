@@ -31,23 +31,23 @@ public class profileUITest {
     }
     @Test
     public void testValidIndustry1() {
-        onView(withId(R.id.industryTypeTitle)).perform(typeText(AppConstants.VALID_INDUSTRIES[0]));
-        onView(withId(R.id.industryTypeTitle)).check(matches(withText(AppConstants.VALID_INDUSTRIES[0])));
+        onView(withId(R.id.industryType)).perform(typeText(AppConstants.VALID_INDUSTRIES[0]));
+        onView(withId(R.id.industryType)).check(matches(withText(AppConstants.VALID_INDUSTRIES[0])));
     }
 
     @Test
     public void testValidLicenseNum(){
-        onView(withId(R.id.idNumTitle)).perform(typeText(AppConstants.VALID_ID));
-        onView(withId(R.id.idNumTitle)).check(matches(withText(AppConstants.VALID_ID)));
+        onView(withId(R.id.idNum)).perform(typeText(AppConstants.VALID_ID));
+        onView(withId(R.id.idNum)).check(matches(withText(AppConstants.VALID_ID)));
     }
     @Test
     public void testHiringStatus(){
-        onView(withId(R.id.hiringStatusTitle)).perform(typeText(AppConstants.HIRING_STATUS));
-        onView(withId(R.id.hiringStatusTitle)).check(matches(withText(AppConstants.HIRING_STATUS)));
+        onView(withId(R.id.hiringStatus)).perform(typeText(AppConstants.HIRING_STATUS));
+        onView(withId(R.id.hiringStatus)).check(matches(withText(AppConstants.HIRING_STATUS)));
     }
     @Test
     public void testValidPhoneNum(){
-        onView(withId(R.id.phoneNumTitle)).perform(typeText(AppConstants.PHONE_NO));
-        onView(withId(R.id.phoneNumTitle)).check(matches(withText(AppConstants.PHONE_NO)));
+        onView(withId(R.id.phoneNum)).perform(typeText(AppConstants.PHONE_NO));
+        onView(withId(R.id.phoneNum)).check(matches(withText(AppConstants.PHONE_NO)));
     }
 }
