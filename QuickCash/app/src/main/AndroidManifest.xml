@@ -19,6 +19,12 @@
 
         </activity>
         <activity
+            android:name=".ui.Authentication.RegisterationActivity"
+            android:exported="true"
+            android:label="QuickCash">
+
+        </activity>
+        <activity
             android:name=".ui.Authentication.LoginActivity"
             android:exported="true"
             android:label="QuickCash">

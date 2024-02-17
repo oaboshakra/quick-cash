@@ -41,7 +41,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
+        TextView signUpLink = findViewById(R.id.SignUpLink);
+        signUpLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterationActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Button signInRequest = findViewById(R.id.Sign_In_Request);
         signInRequest.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +104,6 @@ public class LoginActivity extends AppCompatActivity {
                     });
                 }
 
-                Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
 
 
             }
