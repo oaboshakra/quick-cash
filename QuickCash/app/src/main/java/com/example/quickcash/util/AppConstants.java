@@ -26,5 +26,8 @@ public class AppConstants {
     public static final String INVALID_PASSWORD_MESSAGE = "PASSWORD_INVALID";
     public static final String FIELD_EMPTY_MESSAGE = "Required fields cannot be empty";
 
+    // Spinner options
+    public static final String [] ROLE_SPINNER = new String[]{"Employer", "Empolyee"};
+
 
 }
