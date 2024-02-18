@@ -16,12 +16,25 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".ui.Authentication.RegisterationActivity"
+            android:exported="true"
+            android:label="QuickCash">
+
+        </activity>
+        <activity
+            android:name=".ui.Authentication.LoginActivity"
+            android:exported="true"
+            android:label="QuickCash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>
