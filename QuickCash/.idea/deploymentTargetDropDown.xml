@@ -5,9 +5,6 @@
       <entry key="ApplyJobEspressoTest">
         <State />
       </entry>
-      <entry key="LoginEspressoTest">
-        <State />
-      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
@@ -23,6 +20,12 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-02-11T19:15:44.087022200Z" />
         </State>
+      </entry>
+      <entry key="testEmptyName()">
+        <State />
+      </entry>
+      <entry key="testValidAll()">
+        <State />
       </entry>
     </value>
   </component>

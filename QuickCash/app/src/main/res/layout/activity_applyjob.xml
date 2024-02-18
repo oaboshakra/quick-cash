@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/apply_Name"
         android:layout_width="320dp"
         android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="-125dp"
         android:autofillHints=""
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:hint="Name"
+        android:inputType="textPersonName"
         android:text=""
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintBottom_toTopOf="@+id/apply_Phone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="282dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/apply_Phone"
@@ -29,11 +30,11 @@
         android:hint="Phone number"
         android:inputType="phone"
         android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/apply_Email"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="388dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/apply_Name" />
 
     <EditText
         android:id="@+id/apply_Email"
@@ -43,50 +44,36 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:text=""
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="187dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/apply_Phone" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
 
     <Button
         android:id="@+id/apply_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Apply"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="530dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apply_Email"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="6dp"
-        tools:srcCompat="@tools:sample/avatars"
-        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/jobView"
-        android:layout_width="163dp"
-        android:layout_height="124dp"
-        android:text="jobintrodction"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="7dp" />
+        android:id="@+id/statusLabel"
+        android:layout_width="293dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="60dp"
+        android:gravity="center"
+        android:visibility="visible"
+        android:layout_marginTop="114dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="124dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apply_Email" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

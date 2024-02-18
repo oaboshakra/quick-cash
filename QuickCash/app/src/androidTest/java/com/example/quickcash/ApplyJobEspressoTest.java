@@ -1,5 +1,4 @@
 package com.example.quickcash;
-import androidx.test.espresso.IdlingResource;
 
 import androidx.test.core.app.ActivityScenario;
 import static androidx.test.espresso.Espresso.onView;
@@ -10,25 +9,19 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-import android.content.Context;
-
-import androidx.test.core.app.ActivityScenario;
-import androidx.test.espresso.Espresso;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.platform.app.InstrumentationRegistry;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 
 import com.example.quickcash.ui.Authentication.ApplyJobActivity;
 import com.example.quickcash.util.AppConstants;
 import com.google.firebase.FirebaseApp;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import static org.junit.Assert.assertFalse;
+import org.junit.runner.RunWith;
 
 
 public class ApplyJobEspressoTest {
-
     ActivityScenario<ApplyJobActivity> activityScenario;
 
     @Before
@@ -99,6 +92,7 @@ public class ApplyJobEspressoTest {
         onView(withId(R.id.apply_Phone)).perform(typeText(AppConstants.VALID_PHONE));
         onView(withId(R.id.apply_Email)).perform(typeText(AppConstants.VALID_EMAIL));
         onView(withId(R.id.apply_btn)).perform(click());
-        onView(withId(R.id.statusLabel)).check(matches(withText(" ")));
+        onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.APPLYJOB_SUCCESS_MESSAGE)));
     }
 }
+
