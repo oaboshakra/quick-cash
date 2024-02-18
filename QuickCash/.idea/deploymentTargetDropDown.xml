@@ -2,7 +2,32 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="testDefaultState()">
+      <entry key="ProfileUITest">
+        <State />
+      </entry>
+      <entry key="app">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\usama\.android\avd\Pixel_7_API_34.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-02-18T01:48:11.312599600Z" />
+        </State>
+      </entry>
+      <entry key="testHiringStatus()">
+        <State />
+      </entry>
+      <entry key="testValidIndustry()">
+        <State />
+      </entry>
+      <entry key="testValidPhoneNum()">
         <State />
       </entry>
     </value>

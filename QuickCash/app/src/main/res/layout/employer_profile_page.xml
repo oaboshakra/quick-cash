@@ -5,26 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/idNum"
-        android:layout_width="147dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="12dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Enter ID No."
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/hiringStatusTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/industryTypeTitle"
-        app:layout_constraintVertical_bias="1.0" />
+<!--    <EditText-->
+<!--        android:id="@+id/idNum"-->
+<!--        android:layout_width="147dp"-->
+<!--        android:layout_height="37dp"-->
+<!--        android:layout_marginStart="250dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="30dp"-->
+<!--        android:layout_marginBottom="12dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/hiringStatusTitle"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/industryTypeTitle"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
 
-    <EditText
+<!--    <EditText-->
+<!--        android:id="@+id/idNum"-->
+<!--        android:layout_width="149dp"-->
+<!--        android:layout_height="37dp"-->
+<!--        android:layout_marginStart="63dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginEnd="28dp"-->
+<!--        android:layout_marginBottom="112dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/saveButton"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/hiringStatus"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/phoneNumTitle"-->
+<!--        tools:ignore="MissingConstraints" /> &lt;!&ndash; added &ndash;&gt;-->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="650dp"
+        android:text="Employer Page"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/idNum"-->
+<!--        android:layout_width="149dp"-->
+<!--        android:layout_height="37dp"-->
+<!--        android:layout_marginStart="63dp"-->
+<!--        android:layout_marginEnd="28dp"-->
+<!--        android:layout_marginBottom="13dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/phoneNumTitle"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/industryType"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+        <EditText
         android:id="@+id/industryType"
         android:layout_width="147dp"
         android:layout_height="37dp"
@@ -33,15 +84,74 @@
         android:layout_marginEnd="250dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
+        android:text=""
         android:inputType="text"
-        android:text="Choose Industry"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/hiringStatusTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/industryTypeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/idNumTitle"
         app:layout_constraintVertical_bias="0.695" />
+
+    <!-- CORRECT ONE! -->
+    <EditText
+        android:id="@+id/idNum"
+        android:layout_width="147dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/phoneNumTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/industryType"
+        app:layout_constraintTop_toBottomOf="@+id/idNumTitle"
+        tools:ignore="MissingConstraints" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/industryType"-->
+<!--        android:layout_width="147dp"-->
+<!--        android:layout_height="37dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:layout_marginEnd="250dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:text=""-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/hiringStatusTitle"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.09"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/industryTypeTitle"-->
+<!--        app:layout_constraintVertical_bias="0.695" />-->
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/industryType"-->
+<!--        android:layout_width="147dp"-->
+<!--        android:layout_height="37dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:layout_marginEnd="250dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:text=""-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/hiringStatusTitle"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.09"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/industryTypeTitle"-->
+<!--        app:layout_constraintVertical_bias="0.695" />-->
+
 
     <TextView
         android:id="@+id/phoneNumTitle"
@@ -71,46 +181,47 @@
         android:textSize="16sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="280dp" />
+        tools:layout_editor_absoluteY="280dp"
+        tools:ignore="MissingConstraints" /> <!-- added -->
 
-    <TextView
-        android:id="@+id/idNumTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="512dp"
-        android:text="ID No."
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
+<!--    <TextView-->
+<!--        android:id="@+id/idNumTitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="150dp"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:layout_marginEnd="25dp"-->
+<!--        android:layout_marginBottom="512dp"-->
+<!--        android:text="ID No."-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.437"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.333" />-->
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="155dp"
-        android:layout_marginBottom="650dp"
-        android:text="Employer Page"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="155dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginEnd="155dp"-->
+<!--        android:layout_marginBottom="650dp"-->
+<!--        android:text="Employer Page"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.466"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.875" />-->
 
     <TextView
         android:id="@+id/industryTypeTitle"
@@ -127,36 +238,98 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
+
+    <TextView
+        android:id="@+id/idNumTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID No."
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="199dp"
+        tools:ignore="MissingConstraints" />
+
+    <!-- added -->
+
+    <!--    <EditText-->
+<!--        android:id="@+id/phoneNum"-->
+<!--        android:layout_width="149dp"-->
+<!--        android:layout_height="37dp"-->
+<!--        android:layout_marginStart="63dp"-->
+<!--        android:layout_marginEnd="28dp"-->
+<!--        android:layout_marginBottom="112dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/saveButton"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/hiringStatus"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/hiringStatus"-->
+<!--        android:layout_width="147dp"-->
+<!--        android:layout_height="37dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="13dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:layout_marginBottom="114dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:text=""-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/saveButton"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/phoneNum"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/hiringStatusTitle" />-->
 
     <EditText
         android:id="@+id/hiringStatus"
         android:layout_width="147dp"
         android:layout_height="39dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="377dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Choose Status"
+        android:text=""
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="315dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hiringStatusTitle"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/phoneNum"
-        android:layout_width="149dp"
+        android:layout_width="147dp"
         android:layout_height="37dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="114dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Enter Phone No."
+        android:text=""
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="317dp" />
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hiringStatus"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumTitle" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="468dp" />
+        android:text="Save"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="466dp"
+        tools:ignore="MissingConstraints" /> <!-- added -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

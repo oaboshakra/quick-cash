@@ -28,11 +28,13 @@ public class AppConstants {
     public static final String FIELD_EMPTY_MESSAGE = "Required fields cannot be empty";
 
     // Constants for the Profile Page
-    public static final String [] VALID_INDUSTRIES = new String[]{"X", "Y", "Z"};
+    public static final String [] VALID_INDUSTRIES = new String[]{"Painting", "Cleaning", "Delivery"};
     public static final String INVALID_ID = "Invalid ID";
-    public static final String VALID_ID = "123456";
-    public static final String HIRING_STATUS = "HIRING";
-    public static final String PHONE_NO = "9021231234";
+    public static final String [] VALID_ID = new String[]{"123456", "456123"};
+//    public static final String HIRING_STATUS = "HIRING";
+    public static final String [] VALID_HIRING_STATUS = new String[]{"Yes", "No"};
+
+    public static final String [] VALID_PHONE_NUM = new String[]{"7199209", "1231234"};
 
 
 }
