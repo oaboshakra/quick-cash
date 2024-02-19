@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/jobNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Job Name"/>
+
+        <EditText
+            android:id="@+id/hoursRequiredEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hours Required"/>
+
+        <EditText
+            android:id="@+id/categoryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Category"/>
+
+        <EditText
+            android:id="@+id/payPerHourEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pay Per Hour"/>
+
+        <EditText
+            android:id="@+id/expectationsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expectations"/>
+
+        <EditText
+            android:id="@+id/requiredSkillsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Required Skills"/>
+
+        <EditText
+            android:id="@+id/additionalInfoEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Additional Information"/>
+
+        <Button
+            android:id="@+id/createJobButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Job"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
