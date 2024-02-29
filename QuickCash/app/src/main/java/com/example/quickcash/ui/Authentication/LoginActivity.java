@@ -11,10 +11,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//import com.example.quickcash.adapter.Authentication;
+
 import com.example.quickcash.databinding.ActivityLoginBinding;
 import com.example.quickcash.R;
-import com.example.quickcash.ui.home.MainActivity;
+import com.example.quickcash.ui.MainActivity;
+import com.example.quickcash.ui.home.WelcomePage;
 import com.example.quickcash.util.AppConstants;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -58,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailTextBox.getText().toString();
                 String password = passwordTextBox.getText().toString();
 
-                Intent intent = new Intent(getApplicationContext() , MainActivity.class);
+                Intent intent = new Intent(getApplicationContext() , WelcomePage.class);
                 intent.putExtra("UserEmail" , "nith2411@gmail.com");
                 intent.putExtra("Role" , "employer");
                 startActivity(intent);

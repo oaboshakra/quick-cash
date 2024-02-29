@@ -12,9 +12,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.quickcash.ui.home.MainActivity;
+import com.example.quickcash.ui.MainActivity;
 import com.example.quickcash.R;
 import com.example.quickcash.models.User;
+import com.example.quickcash.ui.home.WelcomePage;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
 import com.example.quickcash.util.FireBaseConstants;
@@ -57,6 +58,7 @@ public class RegisterationActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext() , MainActivity.class));
                 String firstName = firstNameEditText.getText().toString();
                 String lastName = lastNameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
