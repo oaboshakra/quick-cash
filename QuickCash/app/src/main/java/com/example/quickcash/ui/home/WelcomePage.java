@@ -24,7 +24,7 @@ public class WelcomePage extends Activity {
             @Override
             public void onClick(View v) {
 
-                showToast("Post a Job button clicked");
+                //showToast("Post a Job button clicked");
                 Intent postAJob = new Intent(getApplicationContext() , PostJobFragment.class);
                 postAJob.putExtra("Employer" , "nituu2411@gmail.com");
                 startActivity(postAJob);

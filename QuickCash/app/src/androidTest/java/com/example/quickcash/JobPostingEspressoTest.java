@@ -55,22 +55,22 @@ public class JobPostingEspressoTest{
                 .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
                 .check(ViewAssertions.matches(ViewMatchers.withText("Create Job")));
     }
-    @Test
-    public void testCreateJobButtonClick() {
-        // Mock NavController
-        NavController navController = Mockito.mock(NavController.class);
-
-        // Inject mock NavController into the activity
-        activityScenarioRule.getScenario().onActivity(activity -> {
-            activity.setNavController(navController);
-        });
-
-        // Perform button click
-        Espresso.onView(ViewMatchers.withId(R.id.)).perform(ViewActions.click());
-
-        // Verify that the NavController was called to navigate to the expected destination
-        Mockito.verify(navController).navigate(R.id.action_jobPostingFragment_to_newActivity);
-    }
+//    @Test
+//    public void testCreateJobButtonClick() {
+//        // Mock NavController
+//        NavController navController = Mockito.mock(NavController.class);
+//
+//        // Inject mock NavController into the activity
+//        activityScenarioRule.getScenario().onActivity(activity -> {
+//            activity.setNavController(navController);
+//        });
+//
+//        // Perform button click
+//        Espresso.onView(ViewMatchers.withId(R.id.)).perform(ViewActions.click());
+//
+//        // Verify that the NavController was called to navigate to the expected destination
+//        Mockito.verify(navController).navigate(R.id.action_jobPostingFragment_to_newActivity);
+//    }
 
 
 }

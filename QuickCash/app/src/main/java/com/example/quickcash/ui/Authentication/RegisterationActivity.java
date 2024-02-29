@@ -58,26 +58,26 @@ public class RegisterationActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext() , MainActivity.class));
+
                 String firstName = firstNameEditText.getText().toString();
                 String lastName = lastNameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 String role = roleSpinner.getSelectedItem().toString();
 
-                if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !password.isEmpty() && !role.isEmpty()) {
-                    if (!DataValidator.isValidPassword(password)) {
-                        Toast.makeText(getApplicationContext(), AppConstants.INVALID_PASSWORD_MESSAGE, Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    if (!DataValidator.isValidEmail(email)) {
-                        Toast.makeText(getApplicationContext(), AppConstants.INVALID_EMAIL_MESSAGE, Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                } else {
-                    Toast.makeText(getApplicationContext(), AppConstants.FIELD_EMPTY_MESSAGE, Toast.LENGTH_SHORT).show();
-                    return;
-                }
+//                if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !password.isEmpty() && !role.isEmpty()) {
+//                    if (!DataValidator.isValidPassword(password)) {
+//                        Toast.makeText(getApplicationContext(), AppConstants.INVALID_PASSWORD_MESSAGE, Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//                    if (!DataValidator.isValidEmail(email)) {
+//                        Toast.makeText(getApplicationContext(), AppConstants.INVALID_EMAIL_MESSAGE, Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//                } else {
+//                    Toast.makeText(getApplicationContext(), AppConstants.FIELD_EMPTY_MESSAGE, Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
 
                 User user = new User(firstName, lastName, email, "employer" ,password);
                 FirebaseDatabase.getInstance().getReference().child(FireBaseConstants.USER_COLLECTION).child(UUID.randomUUID().toString())
@@ -86,7 +86,7 @@ public class RegisterationActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Signed up successfully!", Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(getApplicationContext() , MainActivity.class);
+                                    Intent intent = new Intent(getApplicationContext() , WelcomePage.class);
                                     intent.putExtra("UserEmail" , email);
                                     intent.putExtra("Role" , "employer");
                                     startActivity(intent);
