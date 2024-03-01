@@ -35,6 +35,39 @@
 
         </activity>
 
+        <activity
+            android:name=".ui.Authentication.JobSearch"
+            android:exported="true"
+            android:label="QuickCash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.Authentication.ModifyJob"
+            android:exported="true"
+            android:label="QuickCash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.Authentication.AddAndSearch"
+            android:exported="true"
+            android:label="QuickCash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

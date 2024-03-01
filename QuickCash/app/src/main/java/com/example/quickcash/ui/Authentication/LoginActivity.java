@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.equals(AppConstants.EMPTY_STRING) || password.equals(AppConstants.EMPTY_STRING)) {
                     setErrorMessage(AppConstants.FIELD_EMPTY_MESSAGE);
                     statusLabel.setText(errorMessage);
-                    Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
+
                     return;
                 }
                 if ( !DataValidator.isValidEmail(email) ) {
@@ -91,19 +91,28 @@ public class LoginActivity extends AppCompatActivity {
 
                 FirebaseApp.initializeApp(LoginActivity.this);
                 auth = FirebaseAuth.getInstance();
+
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(LoginActivity.this, AppConstants.LOGIN_SUCCESS_MESSAGE, Toast.LENGTH_SHORT).show();
+                                Toast successtoast = Toast.makeText(getApplicationContext(), "Suucessfull", Toast.LENGTH_SHORT);
+                                successtoast.show();
                                 // move to home page code should be implemented here when the home page is created by the team mates.
+
                             } else {
                                 Toast.makeText(LoginActivity.this, AppConstants.LOGIN_FAILURE_MESSAGE, Toast.LENGTH_SHORT).show();
                             }
 
                         }
-                    });
+                });
+                Intent intent = new Intent(getApplicationContext(), AddAndSearch.class);
+                startActivity(intent);
+
             }
+
+
         });
     }
 

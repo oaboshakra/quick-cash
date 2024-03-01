@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!--    &lt;!&ndash; Top App Bar &ndash;&gt;-->
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+    <!--        vissi-->
+
+    <!--        <androidx.appcompat.widget.Toolbar-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize"-->
+    <!--            android:layout_marginBottom="16dp"-->
+    <!--            android:background="?attr/colorPrimary"-->
+    <!--            app:title="Create Job"-->
+    <!--            android:visibility="invisible"-->
+    <!--            app:titleTextColor="#FFFFFF" />-->
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <!-- Job Name -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilJobName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Job Name (Please enter an unique name)" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Hours Required -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilHoursRequired"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TimeZone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Time Zone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Hourly Wage -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilHourlyWage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Wage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hourly Wage (in dollars)"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Skills Needed -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSkillsNeeded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Location" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Create Job Button -->
+    <Button
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Job" />
+
+</LinearLayout>

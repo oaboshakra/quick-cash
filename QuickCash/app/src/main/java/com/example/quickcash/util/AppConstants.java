@@ -29,5 +29,10 @@ public class AppConstants {
     // Spinner options
     public static final String [] ROLE_SPINNER = new String[]{"Employer", "Empolyee"};
 
+    public static final String INVALID_TIMEZONEWAGE = "Choose time zone and wage";
+
+    public static final String INVALID_TIMEZONE = "Choose time zone";
+
+    public static final String INVALID_WAGE = "Choose wage";
 
 }
