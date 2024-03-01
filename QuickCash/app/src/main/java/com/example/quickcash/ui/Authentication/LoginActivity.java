@@ -102,6 +102,9 @@ public class LoginActivity extends AppCompatActivity {
                                 // move to home page code should be implemented here when the home page is created by the team mates.
 
                             } else {
+
+
+                                
                                 Toast.makeText(LoginActivity.this, AppConstants.LOGIN_FAILURE_MESSAGE, Toast.LENGTH_SHORT).show();
                             }
 
