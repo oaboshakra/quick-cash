@@ -66,7 +66,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 String email = emailTextBox.getText().toString();
                 String password = passwordTextBox.getText().toString();
-
+                Intent intent = new Intent(getApplicationContext(), AddAndSearch.class);
+                intent.putExtra("email",email);
+                startActivity(intent);
 
                 if (email.equals(AppConstants.EMPTY_STRING) || password.equals(AppConstants.EMPTY_STRING)) {
                     setErrorMessage(AppConstants.FIELD_EMPTY_MESSAGE);
@@ -107,8 +109,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
                 });
-                Intent intent = new Intent(getApplicationContext(), AddAndSearch.class);
-                startActivity(intent);
+
 
             }
 

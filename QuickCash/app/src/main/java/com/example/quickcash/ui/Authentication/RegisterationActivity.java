@@ -18,6 +18,7 @@ import com.example.quickcash.R;
 import com.example.quickcash.models.User;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
+import com.example.quickcash.util.FireBaseConstants;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -25,6 +26,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
 
 
 public class RegisterationActivity extends AppCompatActivity {
@@ -59,6 +62,7 @@ public class RegisterationActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
 
+
                String firstName =firstNameEditText.getText().toString();
                String lastName =lastNameEditText.getText().toString();
                String email = emailEditText.getText().toString();
@@ -69,7 +73,30 @@ public class RegisterationActivity extends AppCompatActivity {
                    if(  !DataValidator.isValidPassword(password) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_PASSWORD_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
                    if(  !DataValidator.isValidEmail(email) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_EMAIL_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
                    authentication.createUserWithEmailAndPassword(email , password);
-                   startActivity(new Intent(getApplicationContext() , MainActivity.class));
+
+
+
+                   User user = new User(firstName , lastName , email , password , " employer ");
+                   FirebaseDatabase.getInstance().getReference().child(FireBaseConstants.USER_COLLECTION).child(UUID.randomUUID().toString())
+                           .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                               @Override
+                               public void onComplete(@NonNull Task<Void> task) {
+                                   if (task.isSuccessful()) {
+                                       Toast.makeText(getApplicationContext(), "Signed up successfully!", Toast.LENGTH_LONG).show();
+                                       Intent intent = new Intent(getApplicationContext() , AddAndSearch.class);
+                                       intent.putExtra("UserEmail" , email);
+                                       intent.putExtra("Role" , "employer");
+                                       startActivity(intent);
+                                       return;
+                                   }
+                                   else {
+                                       Toast.makeText(getApplicationContext(), "Sign up failed", Toast.LENGTH_LONG).show();
+                                   }
+                               }
+                           });
+
+
+
                }
                else {
                    Toast.makeText(getApplicationContext(), AppConstants.FIELD_EMPTY_MESSAGE ,Toast.LENGTH_SHORT).show();

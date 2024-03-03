@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 public class JobSearch extends AppCompatActivity {
     private EditText searchByName;
     private Button search, apply,back;
-    private TextView name, Location, TimeZone, Wage;
+    private TextView name, Location, TimeZone, Wage, JobOwner;
 
     private DatabaseReference firebaseDBRef;
     @Override
@@ -57,7 +58,7 @@ public class JobSearch extends AppCompatActivity {
         apply.setVisibility(View.GONE);
         Wage = findViewById(R.id.Wage);
         back = findViewById(R.id.back);
-
+        JobOwner = findViewById(R.id.jobOwner);
     }
 
     private void searchJob(String searchByNameString) {
@@ -79,7 +80,8 @@ public class JobSearch extends AppCompatActivity {
                             name.setText(String.format("Name: %s", job.getName()));
                             Location.setText(String.format("Location: %s", job.getLocation()));
                             TimeZone.setText(String.format("TimeZone: %s", job.getTimeZone()));
-                            Wage.setText(String.format("Wage: %s", job.getTimeZone()));
+                            Wage.setText(String.format("Wage: %s", job.getWage()));
+                            JobOwner.setText(String.format("JobOwner: %s", job.getJobOwner()));
                         }
                         break;
                     }

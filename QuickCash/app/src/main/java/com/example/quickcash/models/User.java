@@ -12,7 +12,7 @@ public class User implements Serializable {
 
 
     public User(){}
-    public User(String firstName, String lastName, String email, String role) {
+    public User(String firstName, String lastName, String email, String password, String role) {
         this.FirstName = firstName;
         this.LastName = lastName;
         this.email = email;

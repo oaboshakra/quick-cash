@@ -6,10 +6,12 @@ import java.io.Serializable;
 public class Job implements Serializable {
 
     public static final String TAG = "Job";
+
     private String name;
     private String Location;
     private String TimeZone;
-
+    private String Wage;
+    private String jobOwner;
     //empty constructor for firebase
     public Job() {
     }
@@ -39,4 +41,14 @@ public class Job implements Serializable {
     public void setTimeZone(String TimeZone) {
         this.TimeZone = TimeZone;
     }
+    public String getWage() {
+        return Wage;
+    }
+
+    public void setWage(String wage) {this.Wage = wage;}
+    public String getJobOwner() {
+        return jobOwner;
+    }
+
+    public void setJobOwner(String owner) {this.jobOwner = owner;}
 }
