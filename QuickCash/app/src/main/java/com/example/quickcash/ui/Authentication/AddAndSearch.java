@@ -5,6 +5,8 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.R;
+import com.example.quickcash.ui.employerProfile.EmployerProfile;
+
 import android.widget.Toast;
 public class AddAndSearch extends AppCompatActivity {
 
@@ -32,6 +34,21 @@ public class AddAndSearch extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /*
+        The following code is for the "Profile" button which directs Employers to their page
+        once clicked.
+        */
+        Button goToProfileButton = findViewById(R.id.goToProfile);
+        goToProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EmployerProfile.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }

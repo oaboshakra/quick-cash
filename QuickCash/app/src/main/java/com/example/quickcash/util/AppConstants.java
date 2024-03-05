@@ -35,4 +35,14 @@ public class AppConstants {
 
     public static final String INVALID_WAGE = "Choose wage";
 
+    // ---------------------------------
+
+    public static final String [] VALID_INDUSTRIES = new String[]{"Painting", "Cleaning", "Delivery"};
+    public static final String INVALID_ID = "Invalid ID";
+    public static final String [] VALID_ID = new String[]{"123456", "456123"};
+    //    public static final String HIRING_STATUS = "HIRING";
+    public static final String [] VALID_HIRING_STATUS = new String[]{"Yes", "No"};
+
+    public static final String [] VALID_PHONE_NUM = new String[]{"7199209", "1231234"};
+
 }
