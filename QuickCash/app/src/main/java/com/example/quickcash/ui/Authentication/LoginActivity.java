@@ -13,12 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 //import com.example.quickcash.adapter.Authentication;
-import com.example.quickcash.MainActivity;
 import com.example.quickcash.databinding.ActivityLoginBinding;
 import com.example.quickcash.R;
-import com.example.quickcash.models.User;
-import com.example.quickcash.ui.dashboard.DashboardFragment;
-import com.example.quickcash.ui.home.HomeFragment;
+import com.example.quickcash.ui.home.HomePage;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -66,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 String email = emailTextBox.getText().toString();
                 String password = passwordTextBox.getText().toString();
-                Intent intent = new Intent(getApplicationContext(), AddAndSearch.class);
+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
                 intent.putExtra("email",email);
                 startActivity(intent);
 

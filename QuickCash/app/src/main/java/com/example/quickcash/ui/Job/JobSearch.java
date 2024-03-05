@@ -1,4 +1,4 @@
-package com.example.quickcash.ui.Authentication;
+package com.example.quickcash.ui.Job;
 import com.example.quickcash.R;
 
 import android.content.Intent;
@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.models.Job;
+import com.example.quickcash.ui.home.HomePage;
 import com.example.quickcash.util.FireBaseConstants;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,7 +41,7 @@ public class JobSearch extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AddAndSearch.class);
+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
                 startActivity(intent);
             }
         });

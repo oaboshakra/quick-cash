@@ -36,36 +36,23 @@
         </activity>
 
         <activity
-            android:name=".ui.Authentication.JobSearch"
+            android:name=".ui.Job.JobSearch"
             android:exported="true"
             android:label="QuickCash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
-            android:name=".ui.Authentication.ModifyJob"
+            android:name=".ui.Job.ModifyJob"
             android:exported="true"
             android:label="QuickCash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
-            android:name=".ui.Authentication.AddAndSearch"
+            android:name=".ui.home.HomePage"
             android:exported="true"
             android:label="QuickCash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>

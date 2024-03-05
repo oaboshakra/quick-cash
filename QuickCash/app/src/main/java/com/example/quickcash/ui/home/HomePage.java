@@ -1,12 +1,14 @@
-package com.example.quickcash.ui.Authentication;
+package com.example.quickcash.ui.home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.R;
-import android.widget.Toast;
-public class AddAndSearch extends AppCompatActivity {
+import com.example.quickcash.ui.Job.JobSearch;
+import com.example.quickcash.ui.Job.ModifyJob;
+
+public class HomePage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

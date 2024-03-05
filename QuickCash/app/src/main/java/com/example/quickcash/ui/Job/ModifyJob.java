@@ -1,4 +1,4 @@
-package com.example.quickcash.ui.Authentication;
+package com.example.quickcash.ui.Job;
 
 import android.content.res.Resources;
 import android.os.Bundle;
