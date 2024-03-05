@@ -1,6 +1,5 @@
 package com.example.quickcash.ui.Job;
 import com.example.quickcash.R;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
