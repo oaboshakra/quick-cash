@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.R;
 import com.example.quickcash.ui.Job.JobSearch;
 import com.example.quickcash.ui.Job.ModifyJob;
+import com.example.quickcash.ui.Profile.EmployerProfile;
 
 public class HomePage extends AppCompatActivity {
 
@@ -31,6 +32,19 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), JobSearch.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
+        The following code is for the "Profile" button which directs Employers to their page
+        once clicked.
+        */
+        Button goToProfileButton = findViewById(R.id.goToProfile);
+        goToProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EmployerProfile.class);
                 startActivity(intent);
             }
         });
