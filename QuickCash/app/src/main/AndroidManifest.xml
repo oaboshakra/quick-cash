@@ -60,6 +60,14 @@
             android:label="Profile">
         </activity>
 
+
+
+
+        <activity
+            android:name=".ui.preferenceSystem.preferenceSystem"
+            android:exported="true"
+            android:label="QuickCash">
+        </activity>
     </application>
 
 </manifest>

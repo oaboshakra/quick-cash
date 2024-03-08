@@ -8,13 +8,14 @@ import com.example.quickcash.R;
 import com.example.quickcash.ui.Job.JobSearch;
 import com.example.quickcash.ui.Job.ModifyJob;
 import com.example.quickcash.ui.Profile.EmployerProfile;
+import com.example.quickcash.ui.preferenceSystem.preferenceSystem;
 
 public class HomePage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modifyjob);
+        setContentView(R.layout.activity_homepage);
         Button add = (Button) findViewById(R.id.button);
         Bundle extras = getIntent().getExtras();
         String emailId = extras.getString("email");
@@ -49,5 +50,13 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        Button preference = findViewById(R.id.preference);
+        preference.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), preferenceSystem.class);
+                startActivity(intent);
+            }
+        });
     }
 }

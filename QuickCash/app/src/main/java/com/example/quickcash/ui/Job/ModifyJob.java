@@ -51,10 +51,7 @@ public class ModifyJob extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         emailId = extras.getString("emailid");
         searchNameByEmail(emailId);
-        nameNull = !DataValidator.notNull(name.getText().toString());
-        tzNull = !DataValidator.notNull(TimeZone.getText().toString());
-        wageNull = !DataValidator.notNull(Wage.getText().toString());
-        locNull = !DataValidator.notNull(Location.getText().toString());
+
 
     }
 
@@ -64,7 +61,6 @@ public class ModifyJob extends AppCompatActivity {
 
 
     private void addDataToFRTD() {
-        if(nameNull & tzNull & wageNull & locNull) {
             Map<String, Object> map = new HashMap<>();
             map.put("name", name.getText().toString());
             map.put("Location", Location.getText().toString());
@@ -82,10 +78,6 @@ public class ModifyJob extends AppCompatActivity {
                     })
                     .addOnFailureListener(e ->
                             Toast.makeText(getApplicationContext(), "Job insertion failed", Toast.LENGTH_SHORT).show());
-        }
-        else{
-            Toast.makeText(getApplicationContext(), "Please fill the blank", Toast.LENGTH_SHORT).show();
-        }
     }
 
 
