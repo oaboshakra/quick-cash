@@ -45,4 +45,12 @@ public class AppConstants {
 
     public static final String [] VALID_PHONE_NUM = new String[]{"7199209", "1231234"};
 
+    public static final String Name = "Killer";
+
+    public static final String Location = "park";
+
+    public static final String wage = "12";
+
+    public static final String TimeZOne = "3-6";
+
 }
