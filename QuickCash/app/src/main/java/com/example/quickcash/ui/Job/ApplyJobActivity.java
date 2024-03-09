@@ -35,12 +35,18 @@ public class ApplyJobActivity extends AppCompatActivity {
     private String message = "";
     private DatabaseReference firebaseDBRef;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_applyjob);
 
         Button applyBtn = findViewById(R.id.apply_btn);
+        Button backBtn = findViewById(R.id.back_btn);
+        Bundle extras = getIntent().getExtras();
+        String jobName = extras.getString("Job");
         applyBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -89,9 +95,10 @@ public class ApplyJobActivity extends AppCompatActivity {
                     Toast.makeText(ApplyJobActivity.this, message ,Toast.LENGTH_SHORT).show();
 
                     Map<String, Object> map = new HashMap<>();
-                    map.put("name", name);
-                    map.put("phone", phone);
-                    map.put("email", email);
+                    map.put("JobName", jobName);
+                    map.put("Name", name);
+                    map.put("Phone", phone);
+                    map.put("Email", email);
                     FirebaseDatabase.getInstance(FireBaseConstants.FIREBASE_URL)
                             .getReference()
                             .child("JobApplication")
@@ -108,7 +115,15 @@ public class ApplyJobActivity extends AppCompatActivity {
                 }
             }
         });
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     public String getMessage() {
         return message;
