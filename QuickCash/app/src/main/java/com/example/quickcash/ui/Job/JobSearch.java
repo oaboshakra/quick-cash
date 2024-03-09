@@ -82,6 +82,14 @@ public class JobSearch extends AppCompatActivity {
                             TimeZone.setText(String.format("TimeZone: %s", job.getTimeZone()));
                             Wage.setText(String.format("Wage: %s", job.getWage()));
                             JobOwner.setText(String.format("JobOwner: %s", job.getJobOwner()));
+                            apply.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(getApplicationContext(), ApplyJobActivity.class);
+                                    intent.putExtra("Job", job.getName());
+                                    startActivity(intent);
+                                }
+                            });
                         }
                         break;
                     }
@@ -90,14 +98,6 @@ public class JobSearch extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("SearchActivity", error.getMessage());
-            }
-        });
-
-        apply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ApplyJobActivity.class);
-                startActivity(intent);
             }
         });
     }
