@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab23e3c-44d3-47ab-bb79-0f3e48e3fd5c" name="Changes" comment="" />
+    <list default="true" id="eab23e3c-44d3-47ab-bb79-0f3e48e3fd5c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuickCash/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QuickCash/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuickCash/app/src/main/java/com/example/quickcash/util/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/QuickCash/app/src/main/java/com/example/quickcash/util/AppConstants.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,10 +33,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/Users/nithish/Desktop/csci - 3130/group07-csci3130-se-project-w24"
+    "git-widget-placeholder": "dev2",
+    "last_opened_file_path": "C:/Users/57716/git/group07-csci3130-se-project-w24/QuickCash"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\57716\git\group07-csci3130-se-project-w24\QuickCash\app\src\main\java\com\example\quickcash\ui\Job" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -33,4 +33,28 @@ public class DataValidator {
     public static boolean matchesConfirmPassword(String password, String confirmPassword) {
         return password != null && password.equals(confirmPassword);
     }
+
+    public static boolean isValidName(String name) {
+        if (name == null) {
+            return false;
+        }
+
+        // Use a simple regex pattern for name validation
+        Pattern pattern = Pattern.compile(AppConstants.NAME_REGEX);
+        Matcher matcher = pattern.matcher(name);
+
+        return matcher.matches();
+    }
+
+    public static boolean isValidPhone(String phone) {
+        if (phone == null) {
+            return false;
+        }
+
+        // Use a simple regex pattern for phone validation
+        Pattern pattern = Pattern.compile(AppConstants.PHONE_REGEX);
+        Matcher matcher = pattern.matcher(phone);
+
+        return matcher.matches();
+    }
 }

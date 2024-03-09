@@ -92,5 +92,13 @@ public class JobSearch extends AppCompatActivity {
                 Log.e("SearchActivity", error.getMessage());
             }
         });
+
+        apply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ApplyJobActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
