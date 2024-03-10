@@ -45,6 +45,16 @@ public class AppConstants {
 
     public static final String [] VALID_PHONE_NUM = new String[]{"7199209", "1231234"};
 
+    //Name and Phone.
+    public static final String VALID_NAME = "Good Name";
+    public static final String INVALID_NAME = "name@1234";
+    public static  final String NAME_REGEX ="^([A-ZÀ-ÿ-,a-z. ']+)+$";
+    public static final String VALID_PHONE ="3334445555";
+    public static final String INVALID_PHONE = "123asdf";
+    public static  final String PHONE_REGEX ="^(\\+\\d{1,2}\\s?)?1?\\-?\\.?\\s?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$";
+    public static final String INVALID_PHONE_MESSAGE = "PHONE_INVALID";
+    public static final String INVALID_NAME_MESSAGE = "NAME_INVALID";
+
     public static final String Name = "Killer";
 
     public static final String Location = "park";
