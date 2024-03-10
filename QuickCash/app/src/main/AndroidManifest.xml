@@ -71,6 +71,12 @@
             android:exported="true"
             android:label="QuickCash">
         </activity>
+
+        <activity
+            android:name=".ui.EmployeeSuggestion.ProfileSuggestion"
+            android:exported="true"
+            android:label="QuickCash">
+        </activity>
     </application>
 
 </manifest>

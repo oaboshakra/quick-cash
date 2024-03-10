@@ -5,8 +5,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 import androidx.test.core.app.ActivityScenario;
-
 import com.example.quickcash.util.AppConstants;
+import com.example.quickcash.ui.preferenceSystem.preferenceSystem;
 
 import org.junit.Before;
 
@@ -14,7 +14,7 @@ public class preferenceSystemUITest {
 
     @Before
     public void launchActivity() {
-        ActivityScenario.launch(PreferenceSystem.class);
+        ActivityScenario.launch(preferenceSystem.class);
     }
 
     public void testNameDisplayed() {
