@@ -50,5 +50,7 @@ dependencies {
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation ("androidx.test:runner:1.4.0")
     androidTestImplementation ("androidx.test:rules:1.4.0")
+    implementation("com.firebaseui:firebase-ui-database:8.0.0")
+    implementation("com.google.firebase:firebase-database:20.3.0")
 }
 

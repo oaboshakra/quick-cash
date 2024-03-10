@@ -1,5 +1,5 @@
 package com.example.quickcash.ui.Job;
-
+import com.example.quickcash.util.DataValidator;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +28,7 @@ public class ModifyJob extends AppCompatActivity {
     private Button add;
     private DatabaseReference firebaseDBRef;
 
+    private boolean nameNull,tzNull, wageNull,locNull;
     private String userName;
     private String emailId = "nt477834@dal.ca";
 
@@ -50,6 +51,8 @@ public class ModifyJob extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         emailId = extras.getString("emailid");
         searchNameByEmail(emailId);
+
+
     }
 
     private void attachListeners() {
@@ -58,23 +61,23 @@ public class ModifyJob extends AppCompatActivity {
 
 
     private void addDataToFRTD() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", name.getText().toString());
-        map.put("Location", Location.getText().toString());
-        map.put("TimeZone", TimeZone.getText().toString());
-        map.put("jobOwner" , userName);
-        map.put("Wage", Wage.getText().toString());
-        FirebaseDatabase.getInstance(FireBaseConstants.FIREBASE_URL)
-                .getReference()
-                .child("Jobs")
-                .push()
-                .setValue(map)
-                .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(getApplicationContext(), "Job added successfully", Toast.LENGTH_SHORT).show();
-                    finish();
-                })
-                .addOnFailureListener(e ->
-                        Toast.makeText(getApplicationContext(), "Job insertion failed", Toast.LENGTH_SHORT).show());
+            Map<String, Object> map = new HashMap<>();
+            map.put("name", name.getText().toString());
+            map.put("Location", Location.getText().toString());
+            map.put("TimeZone", TimeZone.getText().toString());
+            map.put("jobOwner", userName);
+            map.put("Wage", Wage.getText().toString());
+            FirebaseDatabase.getInstance(FireBaseConstants.FIREBASE_URL)
+                    .getReference()
+                    .child("Jobs")
+                    .push()
+                    .setValue(map)
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(getApplicationContext(), "Job added successfully", Toast.LENGTH_SHORT).show();
+                        finish();
+                    })
+                    .addOnFailureListener(e ->
+                            Toast.makeText(getApplicationContext(), "Job insertion failed", Toast.LENGTH_SHORT).show());
     }
 
 
