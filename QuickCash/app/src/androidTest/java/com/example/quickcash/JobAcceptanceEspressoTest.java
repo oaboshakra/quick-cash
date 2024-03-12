@@ -33,14 +33,14 @@ public class JobAcceptanceEspressoTest {
 
     @Test
     public void testJobAcceptance() {
-        onView(withId(R.id.job_search)).perform(typeText(AppConstants.Name));
+        onView(withId(R.id.search_btn)).perform(typeText(AppConstants.Name));
         onView(withId(R.id.acceptance_btn)).perform(click());
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.Acceptance)));
     }
 
     @Test
     public void testJobCompletion() {
-        onView(withId(R.id.job_search)).perform(typeText(AppConstants.Name));
+        onView(withId(R.id.search_btn)).perform(typeText(AppConstants.Name));
         onView(withId(R.id.completion_btn)).perform(click());
         onView(withId(R.id.statusLabel)).check(matches(withText(AppConstants.Completion)));
     }
