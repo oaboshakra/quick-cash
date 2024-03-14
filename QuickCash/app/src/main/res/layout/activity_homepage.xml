@@ -64,4 +64,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSearch" />
 
+    <Button
+        android:id="@+id/PayEmploye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="398dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="76dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/goToProfile"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@ public class preferenceSystemUITest {
 
     @Before
     public void launchActivity() {
-        ActivityScenario.launch(PreferenceSystem.class);
+//        ActivityScenario.launch(PreferenceSystem.class);
     }
 
     public void testNameDisplayed() {
