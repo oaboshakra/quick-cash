@@ -9,7 +9,7 @@ import com.example.quickcash.ui.Job.JobSearch;
 import com.example.quickcash.ui.Job.ModifyJob;
 import com.example.quickcash.ui.Profile.EmployerProfile;
 import com.example.quickcash.ui.preferenceSystem.preferenceSystem;
-
+import com.example.quickcash.ui.Job.JobAcceptance;
 public class HomePage extends AppCompatActivity {
 
     @Override
@@ -55,6 +55,15 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), preferenceSystem.class);
+                startActivity(intent);
+            }
+        });
+
+        Button jobAcceptance = findViewById(R.id.jobAcceptance);
+        jobAcceptance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), JobAcceptance.class);
                 startActivity(intent);
             }
         });

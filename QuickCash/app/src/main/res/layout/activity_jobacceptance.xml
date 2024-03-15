@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/jobName"
         android:layout_width="393dp"
         android:layout_height="40dp"
         android:layout_marginHorizontal="8dp"
@@ -42,47 +42,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search"
-        tools:text="Name :" />
-
-
-    <TextView
-        android:id="@+id/Location"
-        android:layout_width="394dp"
-        android:layout_height="46dp"
-        android:layout_marginHorizontal="8dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        tools:text="Location :" />
+        tools:text="Job Name :" />
 
     <TextView
-        android:id="@+id/TimeZone"
-        android:layout_width="395dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="8dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Location"
-        tools:text="Time Zone :" />
-
-    <TextView
-        android:id="@+id/Wage"
-        android:layout_width="388dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="16dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TimeZone"
-        tools:text="Wage :" />
-
-    <TextView
-        android:id="@+id/jobOwner"
+        android:id="@+id/employeeName"
         android:layout_width="384dp"
         android:layout_height="52dp"
         android:layout_marginTop="2dp"
@@ -90,19 +53,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Wage"
-        tools:text="JobOwner :" />
-
-    <TextView
-        android:id="@+id/jobemployee"
-        android:layout_width="384dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="18dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobOwner"
+        app:layout_constraintTop_toBottomOf="@+id/jobName"
         tools:text="Employee:" />
 
     <TextView
@@ -114,7 +65,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobemployee"
+        app:layout_constraintTop_toBottomOf="@+id/employeeName"
         tools:text="Employee's phone:" />
 
     <TextView
@@ -129,24 +80,73 @@
         app:layout_constraintTop_toBottomOf="@+id/employeePhone"
         tools:text="Employee's Email:" />
 
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="384dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="18dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employeeEmail"
+        tools:text="Status:" />
+
     <Button
-        android:id="@+id/completion_btn"
+        android:id="@+id/cancel_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="396dp"
+        android:layout_marginTop="380dp"
         android:layout_marginEnd="31dp"
-        android:text="Completion"
+        android:text="Cancel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Wage" />
+        app:layout_constraintTop_toBottomOf="@+id/employeeName" />
 
     <Button
         android:id="@+id/acceptance_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="396dp"
+        android:layout_marginTop="380dp"
         android:layout_marginEnd="31dp"
         android:text="Acceptance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employeePhone" />
+
+    <Button
+        android:id="@+id/completion_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="31dp"
+        android:text="Completion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employeeEmail" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="130dp"
+        android:text="Back"
         app:layout_constraintEnd_toStartOf="@+id/completion_btn"
-        app:layout_constraintTop_toBottomOf="@+id/Wage" />
+        app:layout_constraintTop_toBottomOf="@+id/employeeEmail" />
+
+    <TextView
+        android:id="@+id/statusLabel"
+        android:layout_width="293dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="60dp"
+        android:gravity="center"
+        android:visibility="visible"
+        android:layout_marginTop="114dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="124dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
