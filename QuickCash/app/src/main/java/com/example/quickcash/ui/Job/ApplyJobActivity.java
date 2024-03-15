@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.MainActivity;
 import com.example.quickcash.R;
 import com.example.quickcash.models.User;
+import com.example.quickcash.models.JobApplication;
 import com.example.quickcash.ui.home.HomePage;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
@@ -94,11 +95,13 @@ public class ApplyJobActivity extends AppCompatActivity {
                     statusLabel.setText(message);
                     Toast.makeText(ApplyJobActivity.this, message ,Toast.LENGTH_SHORT).show();
 
+                    String status = "applying";
                     Map<String, Object> map = new HashMap<>();
-                    map.put("JobName", jobName);
-                    map.put("Name", name);
-                    map.put("Phone", phone);
-                    map.put("Email", email);
+                    map.put("jobName", jobName);
+                    map.put("employeeName", name);
+                    map.put("employeePhone", phone);
+                    map.put("employeeEmail", email);
+                    map.put("status", status);
                     FirebaseDatabase.getInstance(FireBaseConstants.FIREBASE_URL)
                             .getReference()
                             .child("JobApplication")

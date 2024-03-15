@@ -2,7 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="JobAcceptanceEspressoTest">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="testEmailPasswordEmpty()">
+        <State />
+      </entry>
+      <entry key="testJobCancel()">
+        <State />
+      </entry>
+      <entry key="testJobCompletion()">
         <State />
       </entry>
     </value>
