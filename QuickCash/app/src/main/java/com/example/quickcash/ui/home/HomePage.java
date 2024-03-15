@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.R;
 import com.example.quickcash.ui.Job.JobSearch;
 import com.example.quickcash.ui.Job.ModifyJob;
+
+import com.example.quickcash.ui.PayPal.Payment;
 import com.example.quickcash.ui.Profile.EmployerProfile;
 import com.example.quickcash.ui.preferenceSystem.preferenceSystem;
 import com.example.quickcash.ui.Job.JobAcceptance;
@@ -59,11 +61,21 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+
         Button jobAcceptance = findViewById(R.id.jobAcceptance);
         jobAcceptance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), JobAcceptance.class);
+                startActivity(intent);
+            }
+        });
+
+        Button goToPayment = findViewById(R.id.PayEmploye);
+        goToPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Payment.class);
                 startActivity(intent);
             }
         });
