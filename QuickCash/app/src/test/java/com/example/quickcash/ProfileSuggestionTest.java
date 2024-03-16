@@ -10,5 +10,6 @@ public class ProfileSuggestionTest {
         String employeeName = profileSuggestion.retrieveEmployeeName("Tyler");
 
         assertNotNull(employeeName);
+        assertTrue(employeeName instanceof String);
     }
 }
