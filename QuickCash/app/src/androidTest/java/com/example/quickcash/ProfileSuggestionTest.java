@@ -21,7 +21,7 @@ public class ProfileSuggestionTest {
     public void testNameDisplayed() {
         onView(withId(R.id.profileName)).check(matches(withText(AppConstants.Name)));
     }
-    public void testTimeZoneDisplayed() {
+    public void testEmailDisplayed() {
         onView(withId(R.id.profileEmail)).check(matches(withText(AppConstants.VALID_EMAIL)));
     }
 }
