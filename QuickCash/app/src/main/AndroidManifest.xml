@@ -77,6 +77,12 @@
             android:exported="true"
             android:label="QuickCash">
         </activity>
+
+        <activity
+            android:name=".ui.Job.JobAcceptance"
+            android:exported="true"
+            android:label="QuickCash">
+        </activity>
     </application>
 
 </manifest>
