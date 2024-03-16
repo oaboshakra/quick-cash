@@ -1,4 +1,5 @@
 package com.example.quickcash.ui.home;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,40 +15,48 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modifyjob);
-        Button add = (Button) findViewById(R.id.button);
-        Bundle extras = getIntent().getExtras();
-        String emailId = extras.getString("email");
+        setContentView(R.layout.activity_modifyjob); // Ensure this is your HomePage layout, not ModifyJob
 
-        add.setOnClickListener(new View.OnClickListener() {
+        Button rateEmployeeButton = findViewById(R.id.rateEmployee);
+        rateEmployeeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ModifyJob.class);
-                intent.putExtra("emailid",emailId);
+                Intent intent = new Intent(HomePage.this, RateEmployeeActivity.class);
                 startActivity(intent);
             }
         });
-        Button search = (Button) findViewById(R.id.buttonSearch);
+
+        Button add = findViewById(R.id.button);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String emailId = extras.getString("email");
+
+            add.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(HomePage.this, ModifyJob.class);
+                    intent.putExtra("emailid", emailId);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        Button search = findViewById(R.id.buttonSearch);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), JobSearch.class);
+                Intent intent = new Intent(HomePage.this, JobSearch.class);
                 startActivity(intent);
             }
         });
 
-        /*
-        The following code is for the "Profile" button which directs Employers to their page
-        once clicked.
-        */
         Button goToProfileButton = findViewById(R.id.goToProfile);
         goToProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), EmployerProfile.class);
+                Intent intent = new Intent(HomePage.this, EmployerProfile.class);
                 startActivity(intent);
             }
         });
-
     }
 }
