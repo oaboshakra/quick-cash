@@ -1,27 +1,29 @@
 package com.example.quickcash;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
 import androidx.test.core.app.ActivityScenario;
 import com.example.quickcash.ui.ProfileSuggestion.ProfileSuggestion;
 import org.junit.Before;
 import org.junit.Test;
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import com.example.quickcash.util.AppConstants;
 
+import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.Espresso;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.assertion.ViewAssertions;
+import androidx.test.espresso.matcher.ViewMatchers;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import androidx.test.filters.LargeTest;
+import org.junit.Rule;
+import org.junit.Test;
+import com.example.quickcash.R;
+
+@LargeTest
 public class ProfileSuggestionTest {
-    @Before
-    public void launchActivity() {
-        ActivityScenario.launch(ProfileSuggestion.class);
-    }
 
-    public void testNameDisplayed() {
-        onView(withId(R.id.profileName)).check(matches(withText(AppConstants.Name)));
-    }
-    public void testEmailDisplayed() {
-        onView(withId(R.id.profileEmail)).check(matches(withText(AppConstants.VALID_EMAIL)));
+    @Rule
+    public ActivityScenarioRule<ProfileSuggestion> activityRule =
+            new ActivityScenarioRule<>(ProfileSuggestion.class);
+    @Test
+    public void testRecyclerViewDisplayed() {
+        Espresso.onView(ViewMatchers.withId(R.id.employee_recyclerView))
+                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
     }
 }

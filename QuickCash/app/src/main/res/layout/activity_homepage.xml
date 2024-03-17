@@ -19,6 +19,19 @@
         app:layout_constraintVertical_bias="0.758" />
 
     <Button
+        android:id="@+id/goToEmployeeSuggestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Suggestions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSearch"
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <Button
         android:id="@+id/jobAcceptance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
