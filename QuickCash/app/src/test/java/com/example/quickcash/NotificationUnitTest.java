@@ -1,4 +1,5 @@
 package com.example.quickcash;
+import com.example.quickcash.ui.notifications.JobNotification;
 import org.junit.Before;
 import org.junit.Test;
 
