@@ -24,6 +24,11 @@
             android:label="QuickCash">
 
         </activity>
+        <activity android:name=".ui.PayPal.Payment"
+            android:exported="true"
+            android:label="Pay">
+
+        </activity>
         <activity
             android:name=".ui.Authentication.LoginActivity"
             android:exported="true"
@@ -32,9 +37,58 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+
+
+        <activity
+            android:name=".ui.Job.JobSearch"
+            android:exported="true"
+            android:label="QuickCash">
 
         </activity>
 
+        <activity
+            android:name=".ui.Job.ModifyJob"
+            android:exported="true"
+            android:label="QuickCash">
+        </activity>
+
+        <activity
+            android:name=".ui.home.HomePage"
+            android:exported="true"
+            android:label="QuickCash">
+
+        </activity>
+
+        <activity android:name=".ui.Profile.EmployerProfile"
+            android:exported="true"
+            android:label="Profile">
+        </activity>
+
+        <activity
+            android:name=".ui.Job.ApplyJobActivity"
+            android:exported="true"
+            android:label="QuickCash">
+        </activity>
+
+        <activity
+            android:name=".ui.preferenceSystem.preferenceSystem"
+            android:exported="true"
+            android:label="QuickCash">
+        </activity>
+
+        <activity
+            android:name=".ui.ProfileSuggestion.ProfileSuggestion"
+            android:exported="true"
+            android:label="Suggested Employee Profiles">
+        </activity>
+
+        <activity
+            android:name=".ui.Job.JobAcceptance"
+            android:exported="true"
+            android:label="QuickCash">
+        </activity>
     </application>
 
 </manifest>

@@ -14,6 +14,8 @@
     <string name="existing_user">Existing user?</string>
     <string name="registration">Registration</string>
     <string name="existing_user_log_in">Existing User? Log In</string>
+    <string name="enter_amount_to_be_paid">"Enter amount to paid "</string>
+    <string name="make_payment">Pay</string>
     <string-array name="role_options">
         <item>Employee</item>
         <item>Employer</item>
