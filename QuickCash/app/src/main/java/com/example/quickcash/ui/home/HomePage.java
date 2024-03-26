@@ -11,6 +11,7 @@ import com.example.quickcash.ui.Job.ModifyJob;
 import com.example.quickcash.ui.PayPal.Payment;
 import com.example.quickcash.ui.Profile.EmployerProfile;
 import com.example.quickcash.ui.ProfileSuggestion.ProfileSuggestion;
+import com.example.quickcash.ui.Rating.rating;
 import com.example.quickcash.ui.preferenceSystem.preferenceSystem;
 import com.example.quickcash.ui.Job.JobAcceptance;
 public class HomePage extends AppCompatActivity {
@@ -86,6 +87,15 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ProfileSuggestion.class);
+                startActivity(intent);
+            }
+        });
+
+        Button goRaing = (Button) findViewById(R.id.goRating);
+        goRaing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), rating.class);
                 startActivity(intent);
             }
         });

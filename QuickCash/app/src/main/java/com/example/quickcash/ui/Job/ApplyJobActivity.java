@@ -135,4 +135,6 @@ public class ApplyJobActivity extends AppCompatActivity {
     public void setMessage(String errorMessage) {
         this.message = errorMessage;
     }
+
+
 }
