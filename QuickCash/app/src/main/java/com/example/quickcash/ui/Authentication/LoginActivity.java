@@ -1,5 +1,4 @@
 package com.example.quickcash.ui.Authentication;
-//import static com.example.quickcash.adapter.Authentication.*;
 
 import android.content.Intent;
 import android.os.Bundle;

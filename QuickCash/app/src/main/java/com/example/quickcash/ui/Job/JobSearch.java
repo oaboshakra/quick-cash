@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class JobSearch extends AppCompatActivity {
+public class JobSearch extends AppCompatActivity  {
     private EditText searchByName;
     private Button search, apply,back;
     private TextView name, Location, TimeZone, Wage, JobOwner;
