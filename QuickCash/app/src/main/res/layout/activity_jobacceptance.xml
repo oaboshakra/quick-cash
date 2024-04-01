@@ -106,10 +106,14 @@
         android:id="@+id/acceptance_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="246dp"
         android:layout_marginTop="380dp"
         android:layout_marginEnd="31dp"
-        android:text="Acceptance"
+        android:layout_marginBottom="6dp"
+        android:text="Accept"
+        app:layout_constraintBottom_toTopOf="@+id/completion_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employeePhone" />
 
     <Button
@@ -118,7 +122,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="380dp"
         android:layout_marginEnd="31dp"
-        android:text="Completion"
+        android:layout_marginBottom="24dp"
+        android:text="Reject"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employeeEmail" />
 
