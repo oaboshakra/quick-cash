@@ -1,5 +1,3 @@
-
-
 package com.example.quickcash.ui.PayPal;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -25,9 +23,12 @@ import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.paypal.android.sdk.payments.PaymentConfirmation;
+/**
+ * This class represents the PayPal payment functionality within the application.
+ * It allows users to make payments using PayPal.
+ */
 
 public class Payment extends AppCompatActivity {
-
 
     private static final String TAG = Payment.class.getName();
 
@@ -50,20 +51,29 @@ public class Payment extends AppCompatActivity {
         setListeners();
     }
 
+    /**
+     * Initialize UI elements.
+     * Text field : enterAmt , payment status
+     * Button : payNow button
+     */
     private void init() {
-        //initializing ui elements
         enterAmtET = findViewById(R.id.enterAmtET);
         payNowBtn = findViewById(R.id.payNowBtn);
         paymentStatusTV = findViewById(R.id.paymentStatusTV);
     }
 
+    /**
+     * Configure PayPal settings.
+     */
     private void configPayPal() {
-        //configuring paypal i.e defining we're using SANDBOX Environment and setting the paypal client id
         payPalConfig = new PayPalConfiguration()
                 .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
                 .clientId(AppConstants.PAYAPAL_CLIENTID);
     }
 
+    /**
+     * Initialize ActivityResultLauncher for handling activity results.
+     */
     private void initActivityLauncher() {
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -91,10 +101,17 @@ public class Payment extends AppCompatActivity {
                 });
     }
 
+    /**
+     * Set listeners for UI elements.
+     */
     private void setListeners() {
         payNowBtn.setOnClickListener(v -> processPayment());
     }
 
+    /**
+     * This method takes the user to the page which can perform transactoion
+     * towards the employee where they can finish the payments.
+     */
     private void processPayment() {
         final String amount = enterAmtET.getText().toString();
         final PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(
@@ -109,5 +126,4 @@ public class Payment extends AppCompatActivity {
         // Starting Activity Request launcher
         activityResultLauncher.launch(intent);
     }
-
 }

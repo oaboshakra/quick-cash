@@ -12,10 +12,44 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.quickcash.databinding.FragmentHomeBinding;
 
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link HomeFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
+    /**
+     * Default constructor for the HomeFragment.
+     */
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @return A new instance of fragment HomeFragment.
+     */
+    public static HomeFragment newInstance() {
+        return new HomeFragment();
+    }
+
+    /**
+     * Called to have the fragment instantiate its user interface view.
+     *
+     * @param inflater           The LayoutInflater object that can be used to inflate
+     *                           any views in the fragment,
+     * @param container          If non-null, this is the parent view that the fragment's
+     *                           UI should be attached to.  The fragment should not add the view itself,
+     *                           but this can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     *                           from a previous saved state as given here.
+     * @return Return the View for the fragment's UI, or null.
+     */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
@@ -29,6 +63,9 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
+    /**
+     * This method will be called when the fragment is destroyed.
+     */
     @Override
     public void onDestroyView() {
         super.onDestroyView();
