@@ -8,10 +8,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.quickcash.R;
 import com.example.quickcash.models.User;
 import com.example.quickcash.ui.home.HomePage;
@@ -40,15 +38,17 @@ public class RegisterationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        init();// initiaize ui components
+        init();
         setUpListeners();
-
-
-
     }
+
+    /**
+     * This is the fucntion which sets up onClick event listeners for the buttons on the Registeration page.
+     * Ui elements involved :
+     *             -> onClick event listener for the registeration button.
+     */
     public void setUpListeners(){
        singInNav.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -57,9 +57,16 @@ public class RegisterationActivity extends AppCompatActivity {
            }
        });
        registerButton.setOnClickListener(new View.OnClickListener() {
+           /**
+            * This is the onClick call back which performs the registeration activity
+            * It gets data from the initialized UI elements which are required for the registeration.
+            * Once , the data is receivied , data validation is done.
+            * Omce , the data validation is done ,
+            * @param v The view that was clicked.
+            * @returns void
+            */
            @Override
            public void onClick(View v) {
-
 
                String firstName =firstNameEditText.getText().toString();
                String lastName =lastNameEditText.getText().toString();
@@ -71,7 +78,6 @@ public class RegisterationActivity extends AppCompatActivity {
                    if(  !DataValidator.isValidPassword(password) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_PASSWORD_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
                    if(  !DataValidator.isValidEmail(email) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_EMAIL_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
                    authentication.createUserWithEmailAndPassword(email , password);
-
 
 
                    User user = new User(firstName , lastName , email , password , " employer ");
@@ -92,20 +98,23 @@ public class RegisterationActivity extends AppCompatActivity {
                                    }
                                }
                            });
-
-
-
                }
                else {
                    Toast.makeText(getApplicationContext(), AppConstants.FIELD_EMPTY_MESSAGE ,Toast.LENGTH_SHORT).show();
                }
-
            }
        });
 
     }
-    public void init(){
 
+    /**
+     * This method initializes all the  UI elements of the registeratio page.
+     * UI elements initialized :
+     *       |----> Text field : firstName , lastName , email , password.
+     *       |----> Button : registeration button , loginPage nav button.
+     *       |----> Spinner : User Role options spinner
+     */
+    public void init(){
        firstNameEditText = findViewById(R.id.first_Name);
         lastNameEditText = findViewById(R.id.last_Name);
         emailEditText = findViewById(R.id.Email);
@@ -113,7 +122,6 @@ public class RegisterationActivity extends AppCompatActivity {
         roleSpinner = (Spinner) findViewById(R.id.role_Spinner);
         registerButton = findViewById(R.id.button);
         singInNav = findViewById(R.id.SignInLink);
-
     }
 }
 

@@ -4,58 +4,50 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.quickcash.MainActivity;
 import com.example.quickcash.R;
-import com.example.quickcash.models.User;
-import com.example.quickcash.models.JobApplication;
 import com.example.quickcash.ui.home.HomePage;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.util.DataValidator;
-import com.example.quickcash.util.FireBaseConstants;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * Activity for applying for a job.
+ * This activity allows users to apply for a job by providing their name, phone number, and email.
+ */
 public class ApplyJobActivity extends AppCompatActivity {
     private String message = "";
-    private DatabaseReference firebaseDBRef;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.activity_applyjob);
+        setContentView(R.layout.activity_applyjob);
 
         Button applyBtn = findViewById(R.id.apply_btn);
         Button backBtn = findViewById(R.id.back_btn);
         Bundle extras = getIntent().getExtras();
         String jobName = extras.getString("Job");
-        applyBtn.setOnClickListener(new View.OnClickListener() {
 
+        /**
+         * This is the call back function for the onClick apply job button.
+         * This function first initializes the UI Text fields and then extracts data from them.
+         * Once the data is extracted , data dalidaton is being performed.
+         * Once the data is validated , the job application is put into the firebase collections.
+         */
+        applyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText nameTextBox = findViewById(R.id.apply_Name);
                 EditText phoneTextBox = findViewById(R.id.apply_Phone);
                 EditText emailTextBox = findViewById(R.id.apply_Email);
-
                 TextView statusLabel = findViewById(R.id.statusLabel);
                 setMessage(AppConstants.EMPTY_STRING);
 
@@ -70,6 +62,7 @@ public class ApplyJobActivity extends AppCompatActivity {
                     Toast.makeText(ApplyJobActivity.this, message ,Toast.LENGTH_SHORT).show();
                     return;
                 }
+                // Additional validation checks
                 if (ready && !DataValidator.isValidEmail(email)) {
                     setMessage(AppConstants.INVALID_EMAIL_MESSAGE);
                     statusLabel.setText(message);
@@ -102,7 +95,8 @@ public class ApplyJobActivity extends AppCompatActivity {
                     map.put("employeePhone", phone);
                     map.put("employeeEmail", email);
                     map.put("status", status);
-                    FirebaseDatabase.getInstance(FireBaseConstants.FIREBASE_URL)
+                    // Saving job application data to Firebase database
+                    FirebaseDatabase.getInstance()
                             .getReference()
                             .child("JobApplication")
                             .push()
@@ -118,6 +112,11 @@ public class ApplyJobActivity extends AppCompatActivity {
                 }
             }
         });
+
+        /**
+         * This callBack function is the onClick listener for the backButton
+         * Once the button is clicked , the  view is moved back to the HomePage.
+         */
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +126,6 @@ public class ApplyJobActivity extends AppCompatActivity {
         });
     }
 
-
     public String getMessage() {
         return message;
     }
@@ -135,6 +133,4 @@ public class ApplyJobActivity extends AppCompatActivity {
     public void setMessage(String errorMessage) {
         this.message = errorMessage;
     }
-
-
 }
