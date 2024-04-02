@@ -30,7 +30,6 @@ public class EmployerProfile extends AppCompatActivity implements AdapterView.On
         TextInputLayout hiringStatusField = findViewById(R.id.hiringStatus);
         TextInputLayout phoneNumField = findViewById(R.id.phoneNum);
         Button theSaveButton = findViewById(R.id.saveButton);
-//        phoneNumField.setText
 
         hiringStatusField.getEditText().setFocusable(true);
         hiringStatusField.getEditText().setFocusableInTouchMode(true);
@@ -42,10 +41,6 @@ public class EmployerProfile extends AppCompatActivity implements AdapterView.On
                 String idNumX = idNumField.getEditText().getText().toString();
                 String hiringStatusX = hiringStatusField.getEditText().getText().toString();
                 String phoneNumX = phoneNumField.getEditText().getText().toString();
-//                String industryTypeX = industryTypeField.getText().toString();
-//                String idNumX = idNumField.getText().toString();
-//                String hiringStatusX = hiringStatusField.getText().toString();
-//                String phoneNumX = phoneNumField.getText().toString();
 
                 Snackbar successSnackbar = Snackbar.make(findViewById(android.R.id.content),"SUCCESS!", Snackbar.LENGTH_SHORT);
                 Snackbar failSnackbar = Snackbar.make(findViewById(android.R.id.content),"FAILURE!", Snackbar.LENGTH_SHORT);
