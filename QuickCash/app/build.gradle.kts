@@ -47,6 +47,8 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation ("com.paypal.sdk:paypal-android-sdk:2.16.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.5.0")
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
+    implementation("com.android.volley:volley:1.2.1")
     testImplementation("junit:junit:4.13.2")
     testImplementation ("org.mockito:mockito-inline:3.4.0")
     androidTestImplementation ("androidx.test.uiautomator:uiautomator:2.2.0")
@@ -55,6 +57,5 @@ dependencies {
     androidTestImplementation ("androidx.test:runner:1.4.0")
     androidTestImplementation ("androidx.test:rules:1.4.0")
     implementation("com.firebaseui:firebase-ui-database:8.0.0")
-    implementation("com.google.firebase:firebase-database:20.3.0")
 }
 
