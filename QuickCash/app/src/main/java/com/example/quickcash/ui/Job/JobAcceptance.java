@@ -68,7 +68,7 @@ public class JobAcceptance extends AppCompatActivity {
     }
 
     /**
-     * This method initializes all the  UI elements of the registeratio page.
+     * This method initializes all the  UI elements of the registeration page.
      * UI elements initialized :
      *       |----> Text field : searchByName , employeName , employePhone , employeEmail , status
      *       |----> Button : Search , job accept button , cancel button .

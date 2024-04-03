@@ -17,6 +17,7 @@ import com.example.quickcash.R;
 import com.example.quickcash.models.User;
 import com.example.quickcash.ui.home.HomePage;
 import com.example.quickcash.util.FireBaseConstants;
+import com.example.quickcash.util.FirebaseManager;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,13 +28,17 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This activity allows users to rate other users by searching their name,
+ * selecting them from the search results, and providing a rating using a RatingBar.
+ */
 public class rating extends AppCompatActivity {
     private EditText searchByName;
     private Button search, submit, back;
     private TextView name, email;
     private RatingBar ratingBar;
     private DatabaseReference firebaseDBRef;
-    private float rate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,19 +59,27 @@ public class rating extends AppCompatActivity {
         });
     }
 
-    private void init(){
+    /**
+     * Initialize UI elements and Firebase database reference.
+     */
+    private void init() {
         ratingBar=findViewById(R.id.ratingBar);
         searchByName = findViewById(R.id.searchName);
         search = findViewById(R.id.searchBUTTON);
         name = findViewById(R.id.rateName);
         email = findViewById(R.id.rateEmail);
-        firebaseDBRef = FirebaseDatabase.getInstance(FireBaseConstants.FIREBASE_URL).getReference();
+        // Get database reference using Singleton pattern
+        firebaseDBRef = FirebaseManager.getInstance().getDatabaseReference();
         submit = findViewById(R.id.buttonSubmit);
         submit.setVisibility(View.GONE);
         back = findViewById(R.id.back);
-
     }
 
+    /**
+     * Search for a user by their name in the Firebase database.
+     * This fucntion executes the auery to search the user by his name to provide rating for him.
+     * @param searchByNameString The name string to search for.
+     */
     private void searchUser(String searchByNameString) {
         final Query nameQuery = firebaseDBRef.child("Users")
                 .orderByChild("firstName")
@@ -83,7 +96,7 @@ public class rating extends AppCompatActivity {
                         user = currentSnapShot.getValue(User.class);
                         if (user != null) {
                             submit.setVisibility(View.VISIBLE);
-                            name.setText(String.format(user.getFirstName()+" "+user.getLastName()));
+                            name.setText(String.format(user.getFirstName() + " " + user.getLastName()));
                             email.setText(String.format(user.getEmail()));
                             submit.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -117,5 +130,4 @@ public class rating extends AppCompatActivity {
             }
         });
     }
-
 }
