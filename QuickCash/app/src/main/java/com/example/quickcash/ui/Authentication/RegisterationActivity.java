@@ -78,7 +78,6 @@ public class RegisterationActivity extends AppCompatActivity {
                     if(  !DataValidator.isValidEmail(email) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_EMAIL_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
                     authentication.createUserWithEmailAndPassword(email , password);
 
-
                     User user = new User(firstName , lastName , email , password , " employer ");
                     FirebaseFacade Registerationfacade = new FirebaseFacade();
                     Registerationfacade.register(user, new IAuthenticationCallBack() {

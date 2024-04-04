@@ -7,6 +7,10 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.R;
+import com.example.quickcash.util.HiringStatusValidator;
+import com.example.quickcash.util.IDataValidator;
+import com.example.quickcash.util.NotNullValidator;
+import com.example.quickcash.util.PhoneNumberValidator;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -100,12 +104,9 @@ public class EmployerProfile extends AppCompatActivity implements AdapterView.On
      * @return true if the hiring status is valid, false otherwise.
      */
     public static boolean isValidHiringStatus(String hiringStatus) {
-        for (int i = 0; i < AppConstants.VALID_HIRING_STATUS.length; i++) {
-            if (AppConstants.VALID_HIRING_STATUS[i].equalsIgnoreCase(hiringStatus)) {
-                return true;
-            }
-        }
-        return false;
+        IDataValidator hiringStatusValidator = new NotNullValidator();
+        hiringStatusValidator.setNextValidator(new HiringStatusValidator());
+        return hiringStatusValidator.validate(hiringStatus);
     }
 
     /**
@@ -130,12 +131,9 @@ public class EmployerProfile extends AppCompatActivity implements AdapterView.On
      * @return true if the phone number is valid, false otherwise.
      */
     public static boolean isValidPhoneNumber(String phoneNumber) {
-        for (int i = 0; i < AppConstants.VALID_PHONE_NUM.length; i++) {
-            if (AppConstants.VALID_PHONE_NUM[i].equalsIgnoreCase(phoneNumber)) {
-                return true;
-            }
-        }
-        return false;
+        IDataValidator phoneNumberValidator = new NotNullValidator();
+        phoneNumberValidator.setNextValidator(new PhoneNumberValidator());
+        return phoneNumberValidator.validate(phoneNumber);
     }
 
     @Override
