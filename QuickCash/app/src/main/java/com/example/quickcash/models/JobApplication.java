@@ -1,7 +1,7 @@
 package com.example.quickcash.models;
 import java.io.Serializable;
 //needs to be serializable to pass on the data from one page to another
-public class JobApplication {
+public class JobApplication implements Serializable{
     public static final String TAG = "JobApplication";
 
     private String jobName;
