@@ -66,4 +66,8 @@ public class AppConstants {
     public static final String TimeZOne = "3-6";
 
     public static final String PAYAPAL_CLIENTID = "ASLSiJD6m8KXSuLrKU6WuZ3T-vmP-ODW5hi9y-DfDzdiZAxbElKxpRzrcMJ4MEhnvJ0uy9MabB6ulRde";
+
+    public static final double LONGITUDE = -63.58;
+    public static final double LATITUDE = 44.65;
+
 }
