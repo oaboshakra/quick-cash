@@ -22,12 +22,11 @@ import java.io.IOException;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
     private GoogleMap mMap;
     SearchView searchView;
-
     /**
      * This method is called when the activity is first created.
+     *
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,17 +77,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng halifax = getLatLong();
+        LatLng halifax = getHalifaxLatLong();
         mMap = googleMap;
         mMap.addMarker(new MarkerOptions().position(halifax).title("You are currently here in Halifax"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(halifax));
-
     }
-
     /**
      * @return a the Coordinates of Halifax.
      */
-    private LatLng getLatLong() {
-        return new LatLng(AppConstants.LATITUDE, AppConstants.LONGITUDE);
+    private LatLng getHalifaxLatLong() {
+        return new LatLng(AppConstants.HALIFAX_LATITUDE, AppConstants.HALIFAX_LONGITUDE);
     }
 }
