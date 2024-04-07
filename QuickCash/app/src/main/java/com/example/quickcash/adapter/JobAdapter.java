@@ -57,6 +57,11 @@ public class JobAdapter extends FirebaseRecyclerAdapter<Job, JobAdapter.JobViewH
         }
     }
 
+    /**
+     * @param holder
+     * @param position
+     * @param job the model object containing the data that should be used to populate the view.
+     */
     @Override
     protected void onBindViewHolder(@NonNull JobViewHolder holder, int position, @NonNull Job job) {
         holder.name.setText(job.getName());

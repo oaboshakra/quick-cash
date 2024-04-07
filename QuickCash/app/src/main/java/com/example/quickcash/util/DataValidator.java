@@ -105,4 +105,63 @@ public class DataValidator {
 
         return matcher.matches();
     }
+
+
+
+
+
+
+    /**
+     * Validates the provided industry type with a list of valid industry types.
+     *
+     * @param industryType The industry type to be validated.
+     * @return true if the industry type is valid, false otherwise.
+     */
+    public static boolean isValidIndustryType(String industryType) {
+        for (int i = 0; i < AppConstants.VALID_INDUSTRIES.length; i++) {
+            if (AppConstants.VALID_INDUSTRIES[i].equalsIgnoreCase(industryType)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Validates the provided industry type against a list of valid industry types.
+     *
+     * @param hiringStatus The hiring status to be validated.
+     * @return true if the hiring status is valid, false otherwise.
+     */
+    public static boolean isValidHiringStatus(String hiringStatus) {
+        IDataValidator hiringStatusValidator = new NotNullValidator();
+        hiringStatusValidator.setNextValidator(new HiringStatusValidator());
+        return hiringStatusValidator.validate(hiringStatus);
+    }
+
+    /**
+     * Validates the provided industry type against a list of valid industry types.
+     *
+     * @param idNumber The id number to be validated.
+     * @return true if the id number is valid, false otherwise.
+     */
+    public static boolean isValidIdNumber(String idNumber) {
+        for (int i = 0; i < AppConstants.VALID_ID.length; i++) {
+            if (AppConstants.VALID_ID[i].equalsIgnoreCase(idNumber)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Validates the provided industry type against a list of valid industry types.
+     *
+     * @param phoneNumber The phone number to be validated.
+     * @return true if the phone number is valid, false otherwise.
+     */
+    public static boolean isValidPhoneNumber(String phoneNumber) {
+        IDataValidator phoneNumberValidator = new NotNullValidator();
+        phoneNumberValidator.setNextValidator(new PhoneNumberValidator());
+        return phoneNumberValidator.validate(phoneNumber);
+    }
 }

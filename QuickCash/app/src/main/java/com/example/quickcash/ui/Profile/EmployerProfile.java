@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.util.AppConstants;
 import com.example.quickcash.R;
+import com.example.quickcash.util.DataValidator;
 import com.example.quickcash.util.HiringStatusValidator;
 import com.example.quickcash.util.IDataValidator;
 import com.example.quickcash.util.NotNullValidator;
@@ -71,8 +72,8 @@ public class EmployerProfile extends AppCompatActivity implements AdapterView.On
                 Snackbar failSnackbar = Snackbar.make(findViewById(android.R.id.content),"FAILURE!", Snackbar.LENGTH_SHORT);
 
                 // Validates the inputs using helper methods and display appropriate message
-                if (isValidIndustryType(industryTypeX) && isValidHiringStatus(hiringStatusX) &&
-                        isValidPhoneNumber(phoneNumX) && isValidIdNumber(idNumX)) {
+                if (DataValidator.isValidIndustryType(industryTypeX) && DataValidator.isValidHiringStatus(hiringStatusX) &&
+                        DataValidator.isValidPhoneNumber(phoneNumX) && DataValidator.isValidIdNumber(idNumX)) {
                     successSnackbar.show();
                 }
                 else {
@@ -82,59 +83,6 @@ public class EmployerProfile extends AppCompatActivity implements AdapterView.On
         });
     }
 
-    /**
-     * Validates the provided industry type with a list of valid industry types.
-     *
-     * @param industryType The industry type to be validated.
-     * @return true if the industry type is valid, false otherwise.
-     */
-    public static boolean isValidIndustryType(String industryType) {
-        for (int i = 0; i < AppConstants.VALID_INDUSTRIES.length; i++) {
-            if (AppConstants.VALID_INDUSTRIES[i].equalsIgnoreCase(industryType)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Validates the provided industry type against a list of valid industry types.
-     *
-     * @param hiringStatus The hiring status to be validated.
-     * @return true if the hiring status is valid, false otherwise.
-     */
-    public static boolean isValidHiringStatus(String hiringStatus) {
-        IDataValidator hiringStatusValidator = new NotNullValidator();
-        hiringStatusValidator.setNextValidator(new HiringStatusValidator());
-        return hiringStatusValidator.validate(hiringStatus);
-    }
-
-    /**
-     * Validates the provided industry type against a list of valid industry types.
-     *
-     * @param idNumber The id number to be validated.
-     * @return true if the id number is valid, false otherwise.
-     */
-    public static boolean isValidIdNumber(String idNumber) {
-        for (int i = 0; i < AppConstants.VALID_ID.length; i++) {
-            if (AppConstants.VALID_ID[i].equalsIgnoreCase(idNumber)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Validates the provided industry type against a list of valid industry types.
-     *
-     * @param phoneNumber The phone number to be validated.
-     * @return true if the phone number is valid, false otherwise.
-     */
-    public static boolean isValidPhoneNumber(String phoneNumber) {
-        IDataValidator phoneNumberValidator = new NotNullValidator();
-        phoneNumberValidator.setNextValidator(new PhoneNumberValidator());
-        return phoneNumberValidator.validate(phoneNumber);
-    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
