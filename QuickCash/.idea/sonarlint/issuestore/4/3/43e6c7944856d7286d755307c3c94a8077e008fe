@@ -1,0 +1,7 @@
+
+	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ώ†θJ$bd914bef-0787-486f-a434-8841b9d7e595
+	java:S116"SRename this field "Location" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ω‰ΔJ$efa58bd2-bff9-4412-ac35-33787efa3bd7
+“	java:S116"SRename this field "TimeZone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Αυ‘ΐϋÿÿÿÿJ$0fb4aa3b-b3d5-4026-b4e0-db544393f79a
+	java:S116"ORename this field "Wage" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ϋΧ¦J$a983d8dd-4f65-4826-b332-5bbc9184d546
+Β
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(έ§ψγόÿÿÿÿJ$4b1aff8f-3766-4cb1-aae4-57f1b2f19884

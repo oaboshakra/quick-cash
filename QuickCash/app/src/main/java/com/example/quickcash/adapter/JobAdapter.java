@@ -12,12 +12,19 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.example.quickcash.models.Job;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
+/**
+ * Adapter class for displaying Job items in a RecyclerView.
+ */
 public class JobAdapter extends FirebaseRecyclerAdapter<Job, JobAdapter.JobViewHolder> {
 
+    /**
+     * Constructor for JobAdapter.
+     *
+     * @param options Options to configure the adapter.
+     */
     public JobAdapter(@NonNull FirebaseRecyclerOptions<Job> options) {
         super(options);
     }
-
 
     @NonNull
     @Override
@@ -26,12 +33,20 @@ public class JobAdapter extends FirebaseRecyclerAdapter<Job, JobAdapter.JobViewH
         return new JobViewHolder(view);
     }
 
-
+    /**
+     * ViewHolder class for holding views of a Job item.
+     */
     public class JobViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView name,timeZone,location,wage;
+        private final TextView name, timeZone, location, wage;
 
         private final Context context;
+
+        /**
+         * Constructor for JobViewHolder.
+         *
+         * @param itemView The view containing the job item layout.
+         */
         public JobViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.RecommendName);
@@ -42,6 +57,11 @@ public class JobAdapter extends FirebaseRecyclerAdapter<Job, JobAdapter.JobViewH
         }
     }
 
+    /**
+     * @param holder
+     * @param position
+     * @param job the model object containing the data that should be used to populate the view.
+     */
     @Override
     protected void onBindViewHolder(@NonNull JobViewHolder holder, int position, @NonNull Job job) {
         holder.name.setText(job.getName());

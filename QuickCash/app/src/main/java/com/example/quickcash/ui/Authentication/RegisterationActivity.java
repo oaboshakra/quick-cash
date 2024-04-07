@@ -8,10 +8,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.quickcash.R;
 import com.example.quickcash.models.User;
 import com.example.quickcash.ui.home.HomePage;
@@ -29,8 +27,7 @@ import java.util.UUID;
 
 
 public class RegisterationActivity extends AppCompatActivity {
-    FirebaseAuth auth;
-    DatabaseReference databaseReference;
+
     EditText firstNameEditText, lastNameEditText, emailEditText, passwordEditText, confirmPasswordEditText;
     Spinner roleSpinner;
     Button registerButton;
@@ -40,176 +37,84 @@ public class RegisterationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        init();// initiaize ui components
+        init();
         setUpListeners();
-
-
-
     }
+
+    /**
+     * This is the fucntion which sets up onClick event listeners for the buttons on the Registeration page.
+     * Ui elements involved :
+     *             -> onClick event listener for the registeration button.
+     */
     public void setUpListeners(){
-       singInNav.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               startActivity(new Intent(RegisterationActivity.this , LoginActivity.class));
-           }
-       });
-       registerButton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
+        singInNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterationActivity.this , LoginActivity.class));
+            }
+        });
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is the onClick call back which performs the registeration activity
+             * It gets data from the initialized UI elements which are required for the registeration.
+             * Once , the data is receivied , data validation is done.
+             * Once , the data validation is done , it uses Firebbase facadeDesign pattern to register the user.
+             * @param v The view that was clicked.
+             * @returns void
+             */
+            @Override
+            public void onClick(View v) {
 
+                String firstName =firstNameEditText.getText().toString();
+                String lastName =lastNameEditText.getText().toString();
+                String email = emailEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+                String role = roleSpinner.getSelectedItem().toString();
 
-               String firstName =firstNameEditText.getText().toString();
-               String lastName =lastNameEditText.getText().toString();
-               String email = emailEditText.getText().toString();
-               String password = passwordEditText.getText().toString();
-               String role = roleSpinner.getSelectedItem().toString();
+                if( !firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !password.isEmpty() && !role.isEmpty() ){
+                    if(  !DataValidator.isValidPassword(password) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_PASSWORD_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
+                    if(  !DataValidator.isValidEmail(email) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_EMAIL_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
+                    authentication.createUserWithEmailAndPassword(email , password);
 
-               if( !firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !password.isEmpty() && !role.isEmpty() ){
-                   if(  !DataValidator.isValidPassword(password) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_PASSWORD_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
-                   if(  !DataValidator.isValidEmail(email) ){  Toast.makeText(getApplicationContext(), AppConstants.INVALID_EMAIL_MESSAGE ,Toast.LENGTH_SHORT).show(); return;}
-                   authentication.createUserWithEmailAndPassword(email , password);
+                    User user = new User(firstName , lastName , email , password , " employer ");
+                    FirebaseFacade Registerationfacade = new FirebaseFacade();
+                    Registerationfacade.register(user, new IAuthenticationCallBack() {
+                        @Override
+                        public void onSuccess() {
+                            Toast.makeText(getApplicationContext(), "success,now pls try sign in ", Toast.LENGTH_LONG).show();
+                        }
+                        @Override
+                        public void onFailure() {
+                            Toast.makeText(getApplicationContext(), "Sign up failed", Toast.LENGTH_LONG).show();
+                        }
+                    });
 
-
-
-                   User user = new User(firstName , lastName , email , password , " employer ");
-                   FirebaseDatabase.getInstance().getReference().child(FireBaseConstants.USER_COLLECTION).child(UUID.randomUUID().toString())
-                           .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                               @Override
-                               public void onComplete(@NonNull Task<Void> task) {
-                                   if (task.isSuccessful()) {
-                                       Toast.makeText(getApplicationContext(), "Signed up successfully!", Toast.LENGTH_LONG).show();
-                                       Intent intent = new Intent(getApplicationContext() , HomePage.class);
-                                       intent.putExtra("UserEmail" , email);
-                                       intent.putExtra("Role" , "employer");
-                                       startActivity(intent);
-                                       return;
-                                   }
-                                   else {
-                                       Toast.makeText(getApplicationContext(), "Sign up failed", Toast.LENGTH_LONG).show();
-                                   }
-                               }
-                           });
-
-
-
-               }
-               else {
-                   Toast.makeText(getApplicationContext(), AppConstants.FIELD_EMPTY_MESSAGE ,Toast.LENGTH_SHORT).show();
-               }
-
-           }
-       });
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), AppConstants.FIELD_EMPTY_MESSAGE ,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
-    public void init(){
 
-       firstNameEditText = findViewById(R.id.first_Name);
+    /**
+     * This method initializes all the  UI elements of the registeratio page.
+     * UI elements initialized :
+     *       |----> Text field : firstName , lastName , email , password.
+     *       |----> Button : registeration button , loginPage nav button.
+     *       |----> Spinner : User Role options spinner
+     */
+    public void init(){
+        firstNameEditText = findViewById(R.id.first_Name);
         lastNameEditText = findViewById(R.id.last_Name);
         emailEditText = findViewById(R.id.Email);
         passwordEditText = findViewById(R.id.Password);
         roleSpinner = (Spinner) findViewById(R.id.role_Spinner);
         registerButton = findViewById(R.id.button);
         singInNav = findViewById(R.id.SignInLink);
-
     }
 }
 
-//        // Initialize Firebase Auth and Database Reference
-//        auth = FirebaseAuth.getInstance();
-//        databaseReference = FirebaseDatabase.getInstance().getReference();
-//
-//        TextView loginLink = findViewById(R.id.loginLink);
-//        loginLink.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(RegisterationActivity.this, LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//
-//        // Initialize UI components
-//        firstNameEditText = findViewById(R.id.first_Name);
-//        lastNameEditText = findViewById(R.id.last_Name);
-//        emailEditText = findViewById(R.id.Email);
-//        passwordEditText = findViewById(R.id.Password);
-//        confirmPasswordEditText = findViewById(R.id.confirmPassword);
-//        roleSpinner = findViewById(R.id.dropDownMenu);
-//        registerButton = findViewById(R.id.registerButton);
-//
-//        // Setup spinner (dropdown) for role selection
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-//                R.array.role_array, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        roleSpinner.setAdapter(adapter);
-//
-//        registerButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String firstName = firstNameEditText.getText().toString().trim();
-//                String lastName = lastNameEditText.getText().toString().trim();
-//                String email = emailEditText.getText().toString().trim();
-//                String password = passwordEditText.getText().toString().trim();
-//                String confirmPassword = confirmPasswordEditText.getText().toString().trim();
-//                String role = roleSpinner.getSelectedItem().toString();
-//
-//                if (!validateForm(firstName, lastName, email, password, confirmPassword, role)) {
-//                    return; // Validation failed
-//                }
-//
-//                // Proceed with Firebase registration
-//                registerUser(email, password, firstName, lastName, role);
-//            }
-//        });
-//    }
-//
-//    private boolean validateForm(String firstName, String lastName, String email, String password, String confirmPassword, String role) {
-//        // Add your validation logic here. For simplicity, only basic checks are performed.
-//        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || !password.equals(confirmPassword)) {
-//            Toast.makeText(RegisterationActivity.this, "Please fill all fields correctly and confirm your password.", Toast.LENGTH_SHORT).show();
-//            return false;
-//        }
-//        if (!DataValidator.isValidEmail(email)) {
-//            Toast.makeText(RegisterationActivity.this, AppConstants.INVALID_EMAIL_MESSAGE, Toast.LENGTH_SHORT).show();
-//            return false;
-//        }
-//        if (!DataValidator.isValidPassword(password)) {
-//            Toast.makeText(RegisterationActivity.this, AppConstants.INVALID_PASSWORD_MESSAGE, Toast.LENGTH_SHORT).show();
-//            return false;
-//        }
-//        return true;
-//    }
-//
-//    private void registerUser(final String email, String password, final String firstName, final String lastName, final String role) {
-//        auth.createUserWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            // Sign in success, update UI with the signed-in user's information
-//                            String userId = auth.getCurrentUser().getUid();
-//                            User newUser = new User(firstName, lastName, email, role);
-//                            databaseReference.child("users").child(userId).setValue(newUser)
-//                                    .addOnCompleteListener(task1 -> {
-//                                        if (task1.isSuccessful()) {
-//                                            Toast.makeText(RegisterationActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-//                                            // Navigate to login or main activity
-//                                            // Intent intent = new Intent(RegisterationActivity.this, LoginActivity.class);
-//                                            // startActivity(intent);
-//                                            // finish();
-//                                        } else {
-//                                            Toast.makeText(RegisterationActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
-//                                        }
-//                                    });
-//                        } else {
-//                            // If sign in fails, display a message to the user.
-//                            Toast.makeText(RegisterationActivity.this, "Authentication failed.",
-//                                    Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//
-//                });
-//

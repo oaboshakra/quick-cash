@@ -1,5 +1,4 @@
 package com.example.quickcash.ui.Authentication;
-//import static com.example.quickcash.adapter.Authentication.*;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,14 +23,15 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * This Activity class for thhe UI logic of login page.
+ * Usees firebase Auth service for the login logic
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
 
-    //private Authentication authInstance;
-
     private FirebaseAuth auth;
-
 
     private String errorMessage = "";
 
@@ -53,6 +53,11 @@ public class LoginActivity extends AppCompatActivity {
         Button signInRequest = findViewById(R.id.Sign_In_Request);
         signInRequest.setOnClickListener(new View.OnClickListener() {
 
+            /**
+             * This is the onClick call back function for login logic.
+             * It initializez the all the Ui elements and gets the data to perform login activity.
+             * @param view The view that was clicked.
+             */
             @Override
             public void onClick(View view) {
 
@@ -70,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.equals(AppConstants.EMPTY_STRING) || password.equals(AppConstants.EMPTY_STRING)) {
                     setErrorMessage(AppConstants.FIELD_EMPTY_MESSAGE);
                     statusLabel.setText(errorMessage);
-
+                    Toast.makeText(LoginActivity.this, errorMessage ,Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if ( !DataValidator.isValidEmail(email) ) {
@@ -86,11 +91,8 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 statusLabel.setText(AppConstants.EMPTY_STRING);
-
-
                 FirebaseApp.initializeApp(LoginActivity.this);
                 auth = FirebaseAuth.getInstance();
-
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -103,21 +105,11 @@ public class LoginActivity extends AppCompatActivity {
                             } else {
                                 Toast.makeText(LoginActivity.this, AppConstants.LOGIN_FAILURE_MESSAGE, Toast.LENGTH_SHORT).show();
                             }
-
                         }
                 });
-
-
             }
-
-
         });
     }
-
-    public String getErrorMessage() {
-        return errorMessage;
-    }
-
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }

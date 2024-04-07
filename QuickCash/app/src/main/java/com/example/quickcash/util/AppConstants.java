@@ -1,16 +1,19 @@
 package com.example.quickcash.util;
 import com.example.quickcash.ui.Authentication.LoginActivity;
 
+/**
+ * This is the AppConstans class where constant variables and values which may be used all over the application are stored and called from here.
+ */
 public class AppConstants {
+
+    // A constant variable for empty strings.
     public static final String EMPTY_STRING = "";
 
     public static final Class<LoginActivity> LAUNCHER_CLASS= LoginActivity.class;
 
-
-     // Email and password.
+    // Constant variables for different types of possible email and password values as well as the an email regex for proper formatting.
     public static final String INVALID_EMAIL = "inavlid1004";
     public static final String VALID_EMAIL = "nith2411@gmail.com";
-
     public static final String VALID_PASSWORD ="Nithish24" ;
     public static final String INVALID_PASSWORD = "123";
     public static  final String EMAIL_REGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
@@ -35,8 +38,7 @@ public class AppConstants {
 
     public static final String INVALID_WAGE = "Choose wage";
 
-    //-------
-
+    // The following are variables being worked with in the EmployerProfile class.
     public static final String [] VALID_INDUSTRIES = new String[]{"Painting", "Cleaning", "Delivery"};
     public static final String INVALID_ID = "Invalid ID";
     public static final String [] VALID_ID = new String[]{"123456", "456123"};
@@ -63,6 +65,10 @@ public class AppConstants {
 
     public static final String TimeZOne = "3-6";
 
-
     public static final String PAYAPAL_CLIENTID = "ASLSiJD6m8KXSuLrKU6WuZ3T-vmP-ODW5hi9y-DfDzdiZAxbElKxpRzrcMJ4MEhnvJ0uy9MabB6ulRde";
+
+    public static final double HALIFAX_LONGITUDE = -63.58;
+    public static final double HALIFAX_LATITUDE = 44.65;
+
+
 }

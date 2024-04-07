@@ -1,0 +1,16 @@
+
+i
+java:S1604,"(Make this anonymous inner class a lambda(àˆÁ§ùÿÿÿÿJ$dacaf1fd-74f2-4c0f-84b8-643b5acc42de
+i
+java:S1604d"(Make this anonymous inner class a lambda(ªš‡øÿÿÿÿJ$aa50a0ac-29d2-40f3-9583-bd43eec658e2
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûË°ûÿÿÿÿJ$1e3007dc-90da-4dfc-9a1d-82b818bbb5c5
+“	java:S116"SRename this field "Location" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Ç‰™şÿÿÿÿJ$beee52bf-a7d5-4f93-8a1c-7312a9efceae
+“	java:S116"SRename this field "TimeZone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Ç‰™şÿÿÿÿJ$226a910f-b7da-41f6-9bdf-45c74fd92ed1
+	java:S116"ORename this field "Wage" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Ç‰™şÿÿÿÿJ$b5b0e341-4fe4-4b9c-9110-b9c8020426b0
+“	java:S116"SRename this field "JobOwner" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Ç‰™şÿÿÿÿJ$220ecfdf-4af0-4f91-a4cb-14a648eee6cc
+ƒ
+java:S1659"BDeclare "apply" and all following declarations on a separate line.(¬—×²ÿÿÿÿÿJ$4b4bf781-7322-4582-98a9-84dd84c80bc0
+†
+java:S1659"EDeclare "Location" and all following declarations on a separate line.(‚Ç‰™şÿÿÿÿJ$94aecde3-1f8c-4b08-b8f7-2d70eff052e3
+q
+java:S1751m"5Remove this "break" statement or make it conditional.(›ûä·J$821d1ef7-aa5f-4959-af3b-283f0ce4310f

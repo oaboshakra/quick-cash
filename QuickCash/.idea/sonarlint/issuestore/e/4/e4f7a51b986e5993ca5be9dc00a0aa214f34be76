@@ -1,0 +1,11 @@
+
+d
+java:S1604-"(Make this anonymous inner class a lambda(¤ â…J$26cb06d5-7cac-4a53-be31-9b89b8b30018
+c
+java:S1604`"(Make this anonymous inner class a lambda(¦ĞÆVJ$59fbd368-55e7-43dc-be4a-29528eeba9db
+d
+java:S16046"(Make this anonymous inner class a lambda(áêËJ$762f2f0f-440b-468d-8a66-9706d95139e9
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éœ˜¨üÿÿÿÿJ$51694159-e8eb-4d74-9bba-f08622b5a297
+w	java:S125"<This block of commented-out lines of code should be removed.(¤äë¢J$88f5fbde-36b7-410b-83ce-f98596f59bc2
+—
+java:S1450 "VRemove the "binding" field and declare it as a local variable in the relevant methods.(¸¢»ŸùÿÿÿÿJ$72de6945-9042-4c7b-bad3-1959fc410509

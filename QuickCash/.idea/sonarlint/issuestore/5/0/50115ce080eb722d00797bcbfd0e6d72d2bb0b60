@@ -1,0 +1,17 @@
+
+ˆ
+java:S1192l"GDefine a constant instead of duplicating this literal "Rating" 3 times.(‹öøåÿÿÿÿÿJ$cbb43673-5d79-4a10-ab69-98c78a1e3e91
+i
+java:S16045"(Make this anonymous inner class a lambda(àˆÁ§ùÿÿÿÿJ$e575febf-994f-4653-8151-ef185292dc74
+d
+java:S1604e"(Make this anonymous inner class a lambda(±Ä­”J$7780c09a-b773-46ec-9ddc-e6147c138109
+ˆ	java:S101#"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(«´ÅJ$6b3c06e2-739f-470b-9cff-7ccb6b2d359c
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»Ê•ôJ$04f660e1-5510-4aad-8551-9ca87b3d8086
+„
+java:S1659%"CDeclare "submit" and all following declarations on a separate line.( ­øÿÿÿÿJ$745df69d-d886-4143-a6fa-7fd4dd560a97
+_
+java:S1659&"#Declare "email" on a separate line.(ÑÙ½J$8112447c-e903-4295-87c2-8c38d8bc2e7c
+‚
+java:S3457c"AFormat specifiers should be used instead of string concatenation.(çû¿ºüÿÿÿÿJ$5b620d76-ba21-4d09-a539-80dad7e912e6
+q
+java:S1751{"5Remove this "break" statement or make it conditional.(›ûä·J$e24392a6-8250-424e-bb2b-fb2a70d3dfdc

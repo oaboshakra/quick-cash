@@ -1,0 +1,32 @@
+
+
+java:S1192"NDefine a constant instead of duplicating this literal "employeePhone" 3 times.(œŞ·‚øÿÿÿÿJ$d785ce4b-d9cb-4b48-846f-b3cd6dd04e90
+‰
+java:S1192i"HDefine a constant instead of duplicating this literal "jobName" 4 times.(ï®ëúÿÿÿÿJ$970b7753-413b-46f9-b05a-07379b3977c7
+‰
+java:S1192"MDefine a constant instead of duplicating this literal "employeeName" 3 times.(®²º'J$cfbf45ef-0831-4a83-8b5d-2d50094250c8
+ˆ
+java:S1192 "KDefine a constant instead of duplicating this literal "Acceptance" 3 times.(êôºŒJ$5097e4ba-7cbd-48f5-9d69-59a1811dbf16
+„
+java:S1192‹"GDefine a constant instead of duplicating this literal "Cancel" 3 times.(î¦¼J$0fc8bd45-98bb-4690-b788-dca8da81fed2
+‹
+java:S1192‘"NDefine a constant instead of duplicating this literal "employeeEmail" 3 times.(§ºù¿J$79682db3-819d-4ad3-9513-e7c21e505055
+
+java:S1192µ"KDefine a constant instead of duplicating this literal "Completion" 3 times.(õÙÂ›üÿÿÿÿJ$dc2467cb-ce50-4a06-b77a-6303bb480a13
+„
+java:S1192’"GDefine a constant instead of duplicating this literal "status" 3 times.(àìÍÍJ$dd24bf2d-6586-43dd-8108-2ee8fa48a129
+i
+java:S1604="(Make this anonymous inner class a lambda(àˆÁ§ùÿÿÿÿJ$bbb32371-d7a5-4f2c-a262-68126ff6f8f0
+j
+java:S1604†"(Make this anonymous inner class a lambda(ê¢›ııÿÿÿÿJ$4f1fda90-588a-42f4-baef-a11148073168
+e
+java:S1604›"(Make this anonymous inner class a lambda(ë¶¯íJ$17d2b9bd-ee4e-41d4-9e9d-61c1467ae2d1
+e
+java:S1604°"(Make this anonymous inner class a lambda(­¸ÎòJ$0a17601e-0b31-45e8-8588-ef4a058c49cc
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûË°ûÿÿÿÿJ$e3a67be8-9c39-409b-a9a7-e497011f7994
+‚
+java:S1659#"ADeclare "back" and all following declarations on a separate line.(óÂÂªıÿÿÿÿJ$82850d65-6ce7-4b64-ae0e-f4a6ef336dbe
+…
+java:S1659$"IDeclare "employeeName" and all following declarations on a separate line.(äÎªûJ$8780a0f9-2fac-4926-bbb8-7bc7cc4ca597
+r
+java:S1751Â"5Remove this "break" statement or make it conditional.(›ûä·J$bd46fac5-9d70-4664-8e04-9b90efcb7918

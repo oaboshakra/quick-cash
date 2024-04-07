@@ -19,8 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-public class JobSearch extends AppCompatActivity {
+/**
+ * Activity for searching and viewing job details.
+ * This activity allows users to search for jobs by name and view details of the searched job.
+ */
+public class JobSearch extends AppCompatActivity  {
     private EditText searchByName;
     private Button search, apply,back;
     private TextView name, Location, TimeZone, Wage, JobOwner;
@@ -31,6 +34,7 @@ public class JobSearch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         init();
+
         search.setOnClickListener(view -> {
             final String searchByNameString = searchByName.getText().toString();
             if (!searchByNameString.trim().isEmpty()) {
@@ -46,6 +50,13 @@ public class JobSearch extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method initializes all the  UI elements of the registeratio page.
+     * UI elements initialized :
+     *       |----> Text field : searchByName , name , location , timeZone , jobOwner
+     *       |----> Button : apply , search Button
+     *       |----> Spinner : NIL.
+     */
     private void init(){
         searchByName = findViewById(R.id.searchName);
         search = findViewById(R.id.searchBUTTON);
@@ -60,6 +71,11 @@ public class JobSearch extends AppCompatActivity {
         JobOwner = findViewById(R.id.jobOwner);
     }
 
+    /**
+     * This is the function that holds query to search for the job with the data is the Job collection.
+     * This function also holds two call back functions for the buttom's eventListeners : Button cancel and accept job.
+     * @param searchByNameString  A string entered in the search text field to search.
+     */
     private void searchJob(String searchByNameString) {
         final Query nameQuery = firebaseDBRef.child("Jobs")
                 .orderByChild("name")

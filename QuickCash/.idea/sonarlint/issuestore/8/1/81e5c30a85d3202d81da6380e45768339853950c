@@ -1,0 +1,12 @@
+
+’	java:S117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßïçÓúÿÿÿÿJ$50ae6861-8f18-4096-b658-97d9cdecda43
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûË°ûÿÿÿÿJ$8dd345fe-ab71-4479-ad4a-89ae9477fea1
+“	java:S116"SRename this field "Location" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÌãùÿÿÿÿJ$34684f8e-ab97-4c43-8ce1-2b48de77321d
+“	java:S116"SRename this field "TimeZone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÌãùÿÿÿÿJ$528f47fb-d8f1-4727-88af-33760d578d2c
+	java:S116"ORename this field "Wage" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÌãùÿÿÿÿJ$e3d5341f-6b0d-4070-bf6f-6accca91205d
+†
+java:S1659"EDeclare "Location" and all following declarations on a separate line.(ÑÌãùÿÿÿÿJ$0f281dc5-e0f8-4242-ad86-aca4fee5855c
+’
+java:S1450#"VRemove the "emailId" field and declare it as a local variable in the relevant methods.(˜•öJ$72ada2b3-4a9b-4b60-b522-690105141e85
+q
+java:S1751z"5Remove this "break" statement or make it conditional.(›ûä·J$89c37ccc-7ac0-4fcd-b856-ae0ec9745ace
