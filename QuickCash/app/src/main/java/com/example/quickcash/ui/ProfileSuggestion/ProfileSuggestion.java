@@ -1,4 +1,5 @@
 package com.example.quickcash.ui.ProfileSuggestion;
+
 import com.example.quickcash.R;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 import com.example.quickcash.util.FireBaseConstants;
 
+/**
+ * Activity responsible for displaying profile suggestions fetched from Firebase Realtime Database.
+ */
 public class ProfileSuggestion extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -29,15 +33,25 @@ public class ProfileSuggestion extends AppCompatActivity {
         attachListeners();
     }
 
+    /**
+     * Initializes UI elements.
+     */
     private void init() {
         recyclerView = findViewById(R.id.employee_recyclerView);
         recyclerView.setLayoutManager(new WrapLinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         backButton = findViewById(R.id.back2);
     }
 
+    /**
+     * Attaches listeners to UI elements.
+     */
     private void attachListeners() {
         backButton.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePage.class)));
     }
+
+    /**
+     * Connects to Firebase Realtime Database and populates RecyclerView with user profiles.
+     */
     private void connectToFirebaseRTDB() {
         final FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
                 .setQuery(FirebaseDatabase.getInstance(FireBaseConstants.FIREBASE_URL)

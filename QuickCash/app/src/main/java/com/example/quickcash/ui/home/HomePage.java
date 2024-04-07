@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quickcash.R;
+import com.example.quickcash.ui.Gmaps.MapsActivity;
 import com.example.quickcash.ui.Job.JobSearch;
 import com.example.quickcash.ui.Job.ModifyJob;
 import com.example.quickcash.ui.PayPal.Payment;
@@ -61,6 +62,14 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), EmployerProfile.class);
                 startActivity(intent);
+            }
+        });
+
+        Button searhMaps = findViewById(R.id.button4);
+        searhMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext() , MapsActivity.class));
             }
         });
 
